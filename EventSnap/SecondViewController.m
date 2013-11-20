@@ -70,7 +70,39 @@
 // add banner to photo
 - (IBAction)addBanner:(id)sender
 {
+    NSLog(@"adding banner");
     
+    CGFloat width, height;
+    // input image to be composited over new image as example
+    UIImage *inputImage = [UIImage imageNamed:@"DonkeyKong"];
+    width = inputImage.size.width;
+    height = inputImage.size.height;
+    
+    // create a new bitmap image context at the device resolution (retina/non-retina)
+    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), YES, 0.0);
+    
+    // get context
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    // push context to make it current
+    // (need to do this manually because we are not drawing in a UIView)
+    UIGraphicsPushContext(context);
+    
+    // drawing code comes here- look at CGContext reference
+    // for available operations
+    // this example draws the inputImage into the context
+    [inputImage drawInRect:CGRectMake(0, 0, width, height)];
+    
+    // pop context
+    UIGraphicsPopContext();
+    
+    // get a UIImage from the image context- enjoy!!!
+    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
+    
+    //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    // clean up drawing environment
+    UIGraphicsEndImageContext();
 }
 
 #pragma mark -
