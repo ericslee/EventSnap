@@ -118,6 +118,9 @@
                                             <state key="normal" title="Save">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="saveImage:" destination="QUy-BD-bpt" eventType="touchUpInside" id="EmB-g7-ymK"/>
+                                            </connections>
                                         </button>
                                         <connections>
                                             <action selector="saveImage:" destination="QUy-BD-bpt" id="8oE-ah-W4M"/>
