@@ -7,6 +7,7 @@
 //
 
 #import "SecondViewController.h"
+#import <Parse/Parse.h>
 
 @interface SecondViewController ()
 
@@ -131,6 +132,46 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     }
 }
 
+-(void)saveImage:(id)sender {
+    
+    NSData *pictureData = UIImagePNGRepresentation(_imageView.image);
+    
+    PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
+    [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        
+        if (succeeded){
+            //2
+            //Add the image to the object, and add the comment and the user
+            PFObject *imageObject = [PFObject objectWithClassName:@"ImageObject"];
+            [imageObject setObject:file forKey:@"image"];
+            //[imageObject setObject:[PFUser currentUser].username forKey:@"user"];
+            //[imageObject setObject:self.commentTextField.text forKey:@"comment"];
+            //3
+            [imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                //4
+                if (succeeded){
+                    //Go back to the wall
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
+                else{
+                    NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                    UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                    [errorAlertView show];
+                }
+            }];
+        }
+        else{
+            //5
+            NSString *errorString = [[error userInfo] objectForKey:@"error"];
+            UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+            [errorAlertView show];
+        }
+    } progressBlock:^(int percentDone) {
+        NSLog(@"Uploaded: %d %%", percentDone);
+    }];
+}
+
+    
 -(void)image:(UIImage *)image
 finishedSavingWithError:(NSError *)error
  contextInfo:(void *)contextInfo
