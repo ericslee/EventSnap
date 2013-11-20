@@ -102,7 +102,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 -(void)saveImage:(id)sender {
     
-    NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
+    NSData *pictureData = UIImagePNGRepresentation(_imageView.image);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
