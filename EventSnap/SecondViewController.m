@@ -71,39 +71,29 @@
 // add banner to photo
 - (IBAction)addBanner:(id)sender
 {
+    // TODO: limit to only adding one banner
     NSLog(@"adding banner");
     
-    CGFloat width, height;
-    // input image to be composited over new image as example
-    UIImage *inputImage = [UIImage imageNamed:@"DonkeyKong"];
-    width = inputImage.size.width;
-    height = inputImage.size.height;
+    // Get reference to the picture taken
+    UIImage *img1 = _imageView.image;
+    // Get reference to banner image to add
+    // TODO: generalize to banners pulled from...Parse?
+    UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
     
-    // create a new bitmap image context at the device resolution (retina/non-retina)
-    UIGraphicsBeginImageContextWithOptions(CGSizeMake(width, height), YES, 0.0);
+    // TODO: fix scaling hack
+    // Scale banner to screen width
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[banner CGImage]
+                        scale:(banner.scale * 1/3.0)
+                  orientation:(banner.imageOrientation)];
     
-    // get context
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    // push context to make it current
-    // (need to do this manually because we are not drawing in a UIView)
-    UIGraphicsPushContext(context);
-    
-    // drawing code comes here- look at CGContext reference
-    // for available operations
-    // this example draws the inputImage into the context
-    [inputImage drawInRect:CGRectMake(0, 0, width, height)];
-    
-    // pop context
-    UIGraphicsPopContext();
-    
-    // get a UIImage from the image context- enjoy!!!
-    UIImage *outputImage = UIGraphicsGetImageFromCurrentImageContext();
-    
-    //[self.layer renderInContext:UIGraphicsGetCurrentContext()];
-    
-    // clean up drawing environment
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    [scaledImage drawAtPoint:CGPointMake(325, 2500)];
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+    //return resultingImage;
 }
 
 #pragma mark -
@@ -134,7 +124,8 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 -(void)saveImage:(id)sender {
     
-    NSData *pictureData = UIImagePNGRepresentation(_imageView.image);
+    // using jpeg for file compression 
+    NSData *pictureData = UIImageJPEGRepresentation(_imageView.image,0.5);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
@@ -150,6 +141,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             [imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //4
                 if (succeeded){
+                    // Display success alert
+                    UIAlertView *uploadedImageAlert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                                                message:@"Image successfully uploaded to photo stream."
+                                                                               delegate:self
+                                                                      cancelButtonTitle:@"Cool, thanks!"
+                                                                      otherButtonTitles:nil, nil];
+                    [uploadedImageAlert show];
+
                     //Go back to the wall
                     [self.navigationController popViewControllerAnimated:YES];
                 }
