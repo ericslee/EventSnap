@@ -426,7 +426,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Tara/Documents/Fall2013Classes/CIS195\\ iOS\\ Dev/EventSnap",
+					../EventSnap,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventSnap/EventSnap-Prefix.pch";
@@ -445,7 +445,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"/Users/Tara/Documents/Fall2013Classes/CIS195\\ iOS\\ Dev/EventSnap",
+					../EventSnap,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "EventSnap/EventSnap-Prefix.pch";
