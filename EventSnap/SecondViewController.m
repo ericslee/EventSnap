@@ -26,6 +26,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+// Change to camera
 - (void) useCamera:(id)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:
@@ -37,13 +39,16 @@
         imagePicker.sourceType =
         UIImagePickerControllerSourceTypeCamera;
         imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-        imagePicker.allowsEditing = NO;
+        
+        // allow basic user editing
+        imagePicker.allowsEditing = YES;
         [self presentViewController:imagePicker
                            animated:YES completion:nil];
         _newMedia = YES;
     }
 }
 
+// Access saved photos
 - (void) useCameraRoll:(id)sender
 {
     if ([UIImagePickerController isSourceTypeAvailable:
@@ -60,6 +65,12 @@
                            animated:YES completion:nil];
         _newMedia = NO;
     }
+}
+
+// add banner to photo
+- (IBAction)addBanner:(id)sender
+{
+    
 }
 
 #pragma mark -

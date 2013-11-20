@@ -16,5 +16,6 @@ UINavigationControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
+- (IBAction)addBanner:(id)sender;
 
 @end
