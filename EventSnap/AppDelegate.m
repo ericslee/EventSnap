@@ -14,6 +14,10 @@
 {
     // Override point for customization after application launch.
     NSLog(@"application finished launching");
+    [Parse setApplicationId:@"NDdJgqMzxYTL5qSjCWj1Sakj1mr42JVknwrhI2M4"
+                  clientKey:@"zYNcEVA7CfhPppQc7X9m8CGN58mRYZMlGaNDKycG"];
+    
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
     return YES;
 }
