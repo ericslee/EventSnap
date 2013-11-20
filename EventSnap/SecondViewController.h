@@ -18,5 +18,6 @@ UINavigationControllerDelegate>
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
 - (IBAction)addBanner:(id)sender;
+- (IBAction)saveImage:(id)sender;
 
 @end
