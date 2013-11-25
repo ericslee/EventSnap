@@ -71,7 +71,29 @@
 // add banner to photo
 - (IBAction)addBanner:(id)sender
 {
+    // TODO: limit to only adding one banner
+    NSLog(@"adding banner");
     
+    // Get reference to the picture taken
+    UIImage *img1 = _imageView.image;
+    // Get reference to banner image to add
+    // TODO: generalize to banners pulled from...Parse?
+    UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
+    
+    // TODO: fix scaling hack
+    // Scale banner to screen width
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[banner CGImage]
+                        scale:(banner.scale * 1/3.0)
+                  orientation:(banner.imageOrientation)];
+    
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    [scaledImage drawAtPoint:CGPointMake(325, 2500)];
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+    //return resultingImage;
 }
 
 #pragma mark -
@@ -118,6 +140,14 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             [imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //4
                 if (succeeded){
+                    // Display success alert
+                    UIAlertView *uploadedImageAlert = [[UIAlertView alloc] initWithTitle:@"Success"
+                                                                                message:@"Image successfully uploaded to photo stream."
+                                                                               delegate:self
+                                                                      cancelButtonTitle:@"Cool, thanks!"
+                                                                      otherButtonTitles:nil, nil];
+                    [uploadedImageAlert show];
+
                     //Go back to the wall
                     [self.navigationController popViewControllerAnimated:YES];
                 }
