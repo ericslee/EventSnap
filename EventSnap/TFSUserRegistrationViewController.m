@@ -150,11 +150,20 @@
 
 
 - (IBAction)registerUser:(id)sender{
-    if([nameField.text isEqualToString:@""] || [emailField.text isEqualToString:@""] || [passwordField.text isEqualToString:@""]) {
+    if([nameField.text isEqualToString:@""] ||
+       [emailField.text isEqualToString:@""] ||
+       [passwordField.text isEqualToString:@""]) {
         UIAlertView *missingFields = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You need to fill everything out" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [missingFields show];
     }
     else {
+        PFObject *userObject = [PFObject objectWithClassName:@"Users"];
+        [userObject setObject:nameField.text forKey:@"Name"];
+        [userObject setObject:emailField.text forKey:@"Email"];
+        [userObject setObject:passwordField.text forKey:@"Password"];
+        
+        [userObject save];
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     }
 

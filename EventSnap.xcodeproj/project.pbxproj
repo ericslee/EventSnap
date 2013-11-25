@@ -25,6 +25,7 @@
 		111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC51842EFD600A9CF91 /* InitialViewController.m */; };
 		111B7DC91842F4A100A9CF91 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC81842F4A100A9CF91 /* EventsListViewController.m */; };
 		571224901842EA62000214D1 /* TFSUserRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712248F1842EA62000214D1 /* TFSUserRegistrationViewController.m */; };
+		573F5599184337DD008CFF19 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 573F5598184337DD008CFF19 /* LoginViewController.m */; };
 		5750E9A4183C5A7500345D27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A3183C5A7500345D27 /* Parse.framework */; };
 		5750E9A6183C5A9300345D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A5183C5A9300345D27 /* AudioToolbox.framework */; };
 		5750E9A8183C5A9800345D27 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A7183C5A9800345D27 /* CFNetwork.framework */; };
@@ -75,6 +76,8 @@
 		111B7DC81842F4A100A9CF91 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
 		5712248E1842EA62000214D1 /* TFSUserRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSUserRegistrationViewController.h; sourceTree = "<group>"; };
 		5712248F1842EA62000214D1 /* TFSUserRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSUserRegistrationViewController.m; sourceTree = "<group>"; };
+		573F5597184337DD008CFF19 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		573F5598184337DD008CFF19 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		5750E9A3183C5A7500345D27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5750E9A5183C5A9300345D27 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5750E9A7183C5A9800345D27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -167,6 +170,8 @@
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
+				573F5597184337DD008CFF19 /* LoginViewController.h */,
+				573F5598184337DD008CFF19 /* LoginViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
 				111B7DC51842EFD600A9CF91 /* InitialViewController.m */,
 				111B7DC71842F4A000A9CF91 /* EventsListViewController.h */,
@@ -309,6 +314,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				573F5599184337DD008CFF19 /* LoginViewController.m in Sources */,
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,

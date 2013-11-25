@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface TFSUserRegistrationViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate> {
     IBOutlet UITextField *nameField;
