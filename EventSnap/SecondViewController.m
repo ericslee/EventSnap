@@ -124,8 +124,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 -(void)saveImage:(id)sender {
     
-    // using jpeg for file compression 
-    NSData *pictureData = UIImageJPEGRepresentation(_imageView.image,0.5);
+    NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
