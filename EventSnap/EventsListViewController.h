@@ -10,4 +10,6 @@
 
 @interface EventsListViewController : UITableViewController
 
+- (IBAction)selectEvent:(id)sender;
+
 @end
