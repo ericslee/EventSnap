@@ -1,18 +1,18 @@
 //
-//  InitialViewController.m
+//  LoginViewController.m
 //  EventSnap
 //
-//  Created by Eric Lee on 11/24/13.
+//  Created by Eric Lee on 11/26/13.
 //  Copyright (c) 2013 Eric Lee. All rights reserved.
 //
 
-#import "InitialViewController.h"
+#import "LoginViewController.h"
 
-@interface InitialViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation InitialViewController
+@implementation LoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,14 +35,14 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)searchEvents:(id)sender
+- (IBAction)registerNewEventOrganizer:(id)sender
 {
-    [self performSegueWithIdentifier:@"EventsList" sender:self];
+    
 }
 
-- (IBAction)loginAsOrganizer:(id)sender
+- (IBAction)transitionToDashboard:(id)sender
 {
-    [self performSegueWithIdentifier:@"LoginView" sender:self];
+    [self performSegueWithIdentifier:@"OrganizerLanding" sender:self];
 }
 
 @end

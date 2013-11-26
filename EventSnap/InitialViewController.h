@@ -11,5 +11,6 @@
 @interface InitialViewController : UIViewController
 
 - (IBAction)searchEvents:(id)sender;
+- (IBAction)loginAsOrganizer:(id)sender;
 
 @end
