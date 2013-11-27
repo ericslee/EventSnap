@@ -11,10 +11,10 @@
 @interface TFSUserRegistrationViewController ()
 
 @property (nonatomic, retain) UIToolbar *keyboardToolbar;
--(void)previousField:(id)sender;
--(void)nextField:(id)sender;
--(void)setupKeyboard;
--(void)resignKeyboard:(id)sender;
+//-(void)previousField:(id)sender;
+//-(void)nextField:(id)sender;
+//-(void)setupKeyboard;
+//-(void)resignKeyboard:(id)sender;
 
 @end
 
@@ -23,12 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    [self setupKeyboard];
-    nameField.inputAccessoryView = self.keyboardToolbar;
-    emailField.inputAccessoryView = self.keyboardToolbar;
-    passwordField.inputAccessoryView = self.keyboardToolbar;
+
+   // [self setupKeyboard];
+   // nameField.inputAccessoryView = self.keyboardToolbar;
+   // emailField.inputAccessoryView = self.keyboardToolbar;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +43,7 @@
     }
     return self;
 }
-
+/*
 - (IBAction)dismissModal:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure?"
                                                              delegate:self
@@ -168,6 +166,6 @@
     }
 
     
-}
+}*/
 
 @end

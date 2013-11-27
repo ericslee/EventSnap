@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface InitialViewController : UIViewController
+@interface InitialViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 - (IBAction)searchEvents:(id)sender;
+- (IBAction)loginView:(id)sender;
 
 @end
