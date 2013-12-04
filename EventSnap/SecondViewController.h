@@ -15,6 +15,8 @@ UINavigationControllerDelegate>
 
 @property BOOL newMedia;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
+
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
 - (IBAction)addBanner:(id)sender;
