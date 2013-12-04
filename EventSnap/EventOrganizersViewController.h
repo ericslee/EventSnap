@@ -1,5 +1,5 @@
 //
-//  EventsListViewController.h
+//  EventOrganizersViewController.h
 //  EventSnap
 //
 //  Created by Tara Siegel on 12/4/13.
@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface EventsListViewController : PFQueryTableViewController
+@interface EventOrganizersViewController : PFQueryTableViewController
 
 @end

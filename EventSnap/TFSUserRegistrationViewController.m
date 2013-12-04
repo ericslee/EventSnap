@@ -11,10 +11,10 @@
 @interface TFSUserRegistrationViewController ()
 
 @property (nonatomic, retain) UIToolbar *keyboardToolbar;
--(void)previousField:(id)sender;
--(void)nextField:(id)sender;
--(void)setupKeyboard;
--(void)resignKeyboard:(id)sender;
+//-(void)previousField:(id)sender;
+//-(void)nextField:(id)sender;
+//-(void)setupKeyboard;
+//-(void)resignKeyboard:(id)sender;
 
 @end
 
@@ -23,12 +23,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    [self setupKeyboard];
-    nameField.inputAccessoryView = self.keyboardToolbar;
-    emailField.inputAccessoryView = self.keyboardToolbar;
-    passwordField.inputAccessoryView = self.keyboardToolbar;
+
+   // [self setupKeyboard];
+   // nameField.inputAccessoryView = self.keyboardToolbar;
+   // emailField.inputAccessoryView = self.keyboardToolbar;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,7 +43,7 @@
     }
     return self;
 }
-
+/*
 - (IBAction)dismissModal:(id)sender {
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Are you sure?"
                                                              delegate:self
@@ -150,15 +148,24 @@
 
 
 - (IBAction)registerUser:(id)sender{
-    if([nameField.text isEqualToString:@""] || [emailField.text isEqualToString:@""] || [passwordField.text isEqualToString:@""]) {
+    if([nameField.text isEqualToString:@""] ||
+       [emailField.text isEqualToString:@""] ||
+       [passwordField.text isEqualToString:@""]) {
         UIAlertView *missingFields = [[UIAlertView alloc] initWithTitle:@"Error" message:@"You need to fill everything out" delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
         [missingFields show];
     }
     else {
+        PFObject *userObject = [PFObject objectWithClassName:@"Users"];
+        [userObject setObject:nameField.text forKey:@"Name"];
+        [userObject setObject:emailField.text forKey:@"Email"];
+        [userObject setObject:passwordField.text forKey:@"Password"];
+        
+        [userObject save];
+        [self dismissViewControllerAnimated:YES completion:nil];
         
     }
 
     
-}
+}*/
 
 @end

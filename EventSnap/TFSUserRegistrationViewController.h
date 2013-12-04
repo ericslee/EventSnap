@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface TFSUserRegistrationViewController : UIViewController <UIActionSheetDelegate, UITextFieldDelegate> {
-    IBOutlet UITextField *nameField;
-    IBOutlet UITextField *emailField;
-    IBOutlet UITextField *passwordField;
+    //IBOutlet UITextField *nameField;
+   // IBOutlet UITextField *emailField;
+    //IBOutlet UITextField *passwordField;
 }
 
-- (IBAction)registerUser:(id)sender;
-- (IBAction)dismissModal:(id)sender;
+//- (IBAction)registerUser:(id)sender;
+//- (IBAction)dismissModal:(id)sender;
 
 @end

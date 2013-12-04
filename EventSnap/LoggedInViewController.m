@@ -1,18 +1,18 @@
 //
-//  LoginViewController.m
+//  LoggedInViewController.m
 //  EventSnap
 //
-//  Created by Tara Siegel on 11/25/13.
+//  Created by Tara Siegel on 11/26/13.
 //  Copyright (c) 2013 Eric Lee. All rights reserved.
 //
 
-#import "LoginViewController.h"
+#import "LoggedInViewController.h"
 
-@interface LoginViewController ()
+@interface LoggedInViewController ()
 
 @end
 
-@implementation LoginViewController
+@implementation LoggedInViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
