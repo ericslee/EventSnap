@@ -9,10 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import "EventOrganizerTableViewController.h"
+#import "EventsListViewController.h"
+
 
 @interface InitialViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
 
 - (IBAction)searchEvents:(id)sender;
 - (IBAction)loginView:(id)sender;
+- (IBAction)editEventLabel:(id)sender;
+//- (IBAction)viewAllEvents:(id)sender;
 
 @end

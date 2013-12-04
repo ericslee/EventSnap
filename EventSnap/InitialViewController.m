@@ -7,8 +7,12 @@
 //
 
 #import "InitialViewController.h"
+#import "EventOrganizerTableViewController.h"
+#import "EventsListViewController.h"
 
 @interface InitialViewController ()
+
+@property (nonatomic, strong) IBOutlet UIButton *editEventButton;
 
 @end
 
@@ -27,6 +31,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    if (![PFUser currentUser]){
+        _editEventButton.hidden = true;
+    }
+    else {
+        _editEventButton.hidden = false;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +48,11 @@
 - (IBAction)searchEvents:(id)sender
 {
     [self performSegueWithIdentifier:@"EventsList" sender:self];
+}
+
+- (IBAction)editEventLabel:(id)sender
+{
+    [self performSegueWithIdentifier:@"OrganizerSignedIn" sender:self];
 }
 
 - (IBAction)loginView:(id)sender
@@ -71,9 +86,9 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
-    [self performSegueWithIdentifier:@"organizerSignedIn" sender:self];
-    
-    
+    [self performSegueWithIdentifier:@"OrganizerSignedIn" sender:self];
+    _editEventButton.hidden = false;
+
 }
 
 // Sent to the delegate when the log in attempt fails.
@@ -84,6 +99,20 @@
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     [self.navigationController popViewControllerAnimated:YES];
+    if ([PFUser currentUser]){
+        _editEventButton.hidden = false;
+    }
+    else {
+        _editEventButton.hidden = true;
+    }
 }
+
+/*- (IBAction)viewAllEvents:(id)sender
+{
+    EventsListViewController *allEvents = [[EventsListViewController alloc] init];
+    
+}*/
+
+
 
 @end

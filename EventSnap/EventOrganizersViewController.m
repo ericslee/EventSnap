@@ -1,24 +1,25 @@
 //
-//  EventsListViewController.m
+//  EventOrganizersViewController.m
 //  EventSnap
 //
 //  Created by Tara Siegel on 12/4/13.
 //  Copyright (c) 2013 Eric Lee. All rights reserved.
 //
 
+#import "EventOrganizersViewController.h"
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
-#import "EventsListViewController.h"
 
-@interface EventsListViewController ()
+@interface EventOrganizersViewController ()
 
 @end
 
-@implementation EventsListViewController
+@implementation EventOrganizersViewController
+
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
-    self = [super initWithClassName:@"Events"];
+    self = [super initWithClassName:@"UsersEvents"];
     self = [super initWithCoder:aDecoder];
     if (self) {
         // The className to query on
@@ -101,7 +102,6 @@
     // This method is called every time objects are loaded from Parse via the PFQuery
 }
 
-
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
@@ -131,10 +131,11 @@
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"event_name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",
-                                 object[@"event_date"]];
+                                 object[@"date"]];
     
     return cell;
 }
+
 
 
 /*

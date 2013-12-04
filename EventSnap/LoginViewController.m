@@ -2,7 +2,7 @@
 //  LoginViewController.m
 //  EventSnap
 //
-//  Created by Eric Lee on 11/26/13.
+//  Created by Tara Siegel on 11/25/13.
 //  Copyright (c) 2013 Eric Lee. All rights reserved.
 //
 
@@ -33,16 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)registerNewEventOrganizer:(id)sender
-{
-    
-}
-
-- (IBAction)transitionToDashboard:(id)sender
-{
-    [self performSegueWithIdentifier:@"OrganizerLanding" sender:self];
 }
 
 @end
