@@ -23,6 +23,11 @@
 		110110C8183098EC00364860 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 110110C6183098EC00364860 /* InfoPlist.strings */; };
 		110110CA183098EC00364860 /* EventSnapTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 110110C9183098EC00364860 /* EventSnapTests.m */; };
 		111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC51842EFD600A9CF91 /* InitialViewController.m */; };
+		111B7DC91842F4A100A9CF91 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC81842F4A100A9CF91 /* EventsListViewController.m */; };
+		11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FC8184F71F300BD1853 /* SWRevealViewController.m */; };
+		11F68E001844B4FA006118F9 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F68DFF1844B4FA006118F9 /* PhotoStreamViewController.m */; };
+		11F68E031844B7C1006118F9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F68E021844B7C1006118F9 /* LoginViewController.m */; };
+		571224901842EA62000214D1 /* TFSUserRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712248F1842EA62000214D1 /* TFSUserRegistrationViewController.m */; };
 		57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		57285F28184F848E00CBBA43 /* EventOrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F26184F0F0900CBBA43 /* EventOrganizersViewController.m */; };
 		5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734DACD184EDF6900D62467 /* PhotoStreamViewController.m */; };
@@ -78,6 +83,16 @@
 		57285F26184F0F0900CBBA43 /* EventOrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizersViewController.m; sourceTree = "<group>"; };
 		5734DACC184EDF6800D62467 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoStreamViewController.h; path = EventSnap/PhotoStreamViewController.h; sourceTree = "<group>"; };
 		5734DACD184EDF6900D62467 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoStreamViewController.m; path = EventSnap/PhotoStreamViewController.m; sourceTree = "<group>"; };
+		111B7DC71842F4A000A9CF91 /* EventsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsListViewController.h; sourceTree = "<group>"; };
+		111B7DC81842F4A100A9CF91 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
+		11374FC7184F71F200BD1853 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController.h; sourceTree = "<group>"; };
+		11374FC8184F71F300BD1853 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController.m; sourceTree = "<group>"; };
+		11F68DFE1844B4FA006118F9 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoStreamViewController.h; path = ../PhotoStreamViewController.h; sourceTree = "<group>"; };
+		11F68DFF1844B4FA006118F9 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoStreamViewController.m; path = ../PhotoStreamViewController.m; sourceTree = "<group>"; };
+		11F68E011844B7C1006118F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		11F68E021844B7C1006118F9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		5712248E1842EA62000214D1 /* TFSUserRegistrationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFSUserRegistrationViewController.h; sourceTree = "<group>"; };
+		5712248F1842EA62000214D1 /* TFSUserRegistrationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFSUserRegistrationViewController.m; sourceTree = "<group>"; };
 		5750E9A3183C5A7500345D27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5750E9A5183C5A9300345D27 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5750E9A7183C5A9800345D27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -331,7 +346,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				110110CA183098EC00364860 /* EventSnapTests.m in Sources */,
+				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
+				11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
