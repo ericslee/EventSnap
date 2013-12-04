@@ -25,6 +25,7 @@
 		111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC51842EFD600A9CF91 /* InitialViewController.m */; };
 		111B7DC91842F4A100A9CF91 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC81842F4A100A9CF91 /* EventsListViewController.m */; };
 		11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FC8184F71F300BD1853 /* SWRevealViewController.m */; };
+		11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */; };
 		11F68E001844B4FA006118F9 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F68DFF1844B4FA006118F9 /* PhotoStreamViewController.m */; };
 		11F68E031844B7C1006118F9 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11F68E021844B7C1006118F9 /* LoginViewController.m */; };
 		571224901842EA62000214D1 /* TFSUserRegistrationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5712248F1842EA62000214D1 /* TFSUserRegistrationViewController.m */; };
@@ -78,6 +79,8 @@
 		111B7DC81842F4A100A9CF91 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
 		11374FC7184F71F200BD1853 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController.h; sourceTree = "<group>"; };
 		11374FC8184F71F300BD1853 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController.m; sourceTree = "<group>"; };
+		11374FCA184F86FF00BD1853 /* SharePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePhotoViewController.h; sourceTree = "<group>"; };
+		11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePhotoViewController.m; sourceTree = "<group>"; };
 		11F68DFE1844B4FA006118F9 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PhotoStreamViewController.h; path = ../PhotoStreamViewController.h; sourceTree = "<group>"; };
 		11F68DFF1844B4FA006118F9 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PhotoStreamViewController.m; path = ../PhotoStreamViewController.m; sourceTree = "<group>"; };
 		11F68E011844B7C1006118F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -176,6 +179,8 @@
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
+				11374FCA184F86FF00BD1853 /* SharePhotoViewController.h */,
+				11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */,
 				11F68E011844B7C1006118F9 /* LoginViewController.h */,
 				11F68E021844B7C1006118F9 /* LoginViewController.m */,
 				11F68DFE1844B4FA006118F9 /* PhotoStreamViewController.h */,
@@ -334,6 +339,7 @@
 				11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
 				571224901842EA62000214D1 /* TFSUserRegistrationViewController.m in Sources */,
+				11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
