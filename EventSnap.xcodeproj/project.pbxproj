@@ -182,6 +182,8 @@
 				110110B1183098EC00364860 /* FirstViewController.m */,
 				110110B3183098EC00364860 /* SecondViewController.h */,
 				110110B4183098EC00364860 /* SecondViewController.m */,
+				11374FC7184F71F200BD1853 /* SWRevealViewController.h */,
+				11374FC8184F71F300BD1853 /* SWRevealViewController.m */,
 				110110B6183098EC00364860 /* Images.xcassets */,
 				110110A2183098EC00364860 /* Supporting Files */,
 			);
