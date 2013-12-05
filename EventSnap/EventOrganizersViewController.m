@@ -7,6 +7,7 @@
 //
 
 #import "EventOrganizersViewController.h"
+#import "EditEventViewController.h"
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 
@@ -128,7 +129,7 @@
                                       reuseIdentifier:cellIdentifier];
     }
     
-    // Configure the cell to show todo item with a priority at the bottom
+    // Configure the cell to show item
     cell.textLabel.text = object[@"event_name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",
                                  object[@"event_start_date"]];
@@ -136,6 +137,15 @@
     return cell;
 }
 
+
+/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showFactDetails"]) {
+        EditEventViewController *detailViewController = [segue destinationViewController];
+        
+        NSIndexPath *index = [self.tableView indexPathForSelectedRow];
+        detailViewController.objectID = [self. objectAtIndex:index.row];
+    }
+}*/
 
 
 /*
@@ -241,6 +251,9 @@
  return YES;
  }
  */
+
+
+
 
 #pragma mark - UITableViewDelegate
 

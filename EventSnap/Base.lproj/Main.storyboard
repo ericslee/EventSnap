@@ -640,10 +640,10 @@
             </objects>
             <point key="canvasLocation" x="1595" y="-2176"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Event View Controller-->
         <scene sceneID="e6v-p6-WJY">
             <objects>
-                <viewController id="UmK-8h-9Pu" sceneMemberID="viewController">
+                <viewController id="UmK-8h-9Pu" customClass="EditEventViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wDI-PY-2Hc"/>
                         <viewControllerLayoutGuide type="bottom" id="DNR-wl-IeU"/>

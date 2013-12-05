@@ -225,11 +225,12 @@
      [eventObject setObject:locationField.text forKey:@"event_location"];
      [eventObject setObject:hashTagsField.text forKey:@"event_hashtags"];
      NSLog(@"made object");
-     //PFRelation *relation = [user relationforKey:@"Events"];
      eventObject[@"event_organizer"] = user;
-    // [relation addObject:eventObject];
-     //[user saveInBackground];
      [eventObject saveInBackground];
+     
+     //PFObject *imageClassForEvent = [PFObject objectWithClassName:eventObject.objectId];
+     //[imageClassForEvent saveInBackground];
+
  [self dismissViewControllerAnimated:YES completion:nil];
  
  }
