@@ -131,7 +131,7 @@
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"event_name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",
-                                 object[@"date"]];
+                                 object[@"event_start_date"]];
     
     return cell;
 }
