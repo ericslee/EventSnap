@@ -9,5 +9,6 @@
 #import <Parse/Parse.h>
 
 @interface EventsListViewController : PFQueryTableViewController
+- (IBAction)selectEvent:(id)sender;
 
 @end
