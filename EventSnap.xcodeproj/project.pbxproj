@@ -39,6 +39,7 @@
 		5750E9B6183C5AC600345D27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */; };
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
 		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
+		57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewEventViewController.m; sourceTree = "<group>"; };
 		57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSelectedEventViewController.h; sourceTree = "<group>"; };
 		57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSelectedEventViewController.m; sourceTree = "<group>"; };
+		57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventInformationViewController.h; sourceTree = "<group>"; };
+		57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventInformationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,8 @@
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
+				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
+				57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */,
 				57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */,
 				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
@@ -333,6 +338,7 @@
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
+				57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */,
 				5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,

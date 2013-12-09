@@ -13,4 +13,6 @@
 
 @property (nonatomic, strong) PFObject *eventObject;
 
+- (IBAction)editEventInformation:(id)sender;
+
 @end

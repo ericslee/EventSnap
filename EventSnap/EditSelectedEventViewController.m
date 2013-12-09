@@ -9,6 +9,7 @@
 #import "EditSelectedEventViewController.h"
 #import <Parse/Parse.h>
 #import "EventOrganizersViewController.h"
+#import "EditEventInformationViewController.h"
 
 @interface EditSelectedEventViewController ()
 
@@ -46,6 +47,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)editEventInformation:(id)sender {
+   UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        EditEventInformationViewController *editInfoViewController = [storyboard instantiateViewControllerWithIdentifier:@"editEventInfo"];
+        editInfoViewController.eventObject = self.eventObject;
+        [self.navigationController pushViewController:editInfoViewController animated:YES];
 }
 
 @end
