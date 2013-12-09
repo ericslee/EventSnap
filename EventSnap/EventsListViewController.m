@@ -136,6 +136,11 @@
     return cell;
 }
 
+- (IBAction)selectEvent:(id)sender
+{
+    [self performSegueWithIdentifier:@"PhotoStream" sender:self];
+}
+
 
 /*
  // Override to customize what kind of query to perform on the class. The default is to query for
