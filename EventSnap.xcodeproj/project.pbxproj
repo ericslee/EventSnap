@@ -38,7 +38,7 @@
 		5750E9B4183C5AC000345D27 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B3183C5AC000345D27 /* StoreKit.framework */; };
 		5750E9B6183C5AC600345D27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */; };
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
-		57D1A1411850584400F7AB8C /* EditEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1401850584400F7AB8C /* EditEventViewController.m */; };
+		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,8 +95,8 @@
 		5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		57D1A13C184F8E6500F7AB8C /* CreateNewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewEventViewController.h; sourceTree = "<group>"; };
 		57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewEventViewController.m; sourceTree = "<group>"; };
-		57D1A13F1850584400F7AB8C /* EditEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventViewController.h; sourceTree = "<group>"; };
-		57D1A1401850584400F7AB8C /* EditEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventViewController.m; sourceTree = "<group>"; };
+		57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSelectedEventViewController.h; sourceTree = "<group>"; };
+		57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSelectedEventViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,8 +181,8 @@
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
-				57D1A13F1850584400F7AB8C /* EditEventViewController.h */,
-				57D1A1401850584400F7AB8C /* EditEventViewController.m */,
+				57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */,
+				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
 				111B7DC51842EFD600A9CF91 /* InitialViewController.m */,
 				57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */,
@@ -332,11 +332,11 @@
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
-				57D1A1411850584400F7AB8C /* EditEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
 				5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
+				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
 				57285F2F184F881800CBBA43 /* EventOrganizersViewController.m in Sources */,
 			);
@@ -464,6 +464,7 @@
 		110110CE183098EC00364860 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -483,6 +484,7 @@
 		110110CF183098EC00364860 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				FRAMEWORK_SEARCH_PATHS = (

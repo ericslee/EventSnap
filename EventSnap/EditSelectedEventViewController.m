@@ -1,14 +1,16 @@
 //
-//  EditEventViewController.m
+//  EditSelectedEventViewController.m
 //  EventSnap
 //
-//  Created by Tara Siegel on 12/5/13.
+//  Created by Tara Siegel on 12/9/13.
 //  Copyright (c) 2013 Eric Lee. All rights reserved.
 //
 
-#import "EditEventViewController.h"
+#import "EditSelectedEventViewController.h"
+#import <Parse/Parse.h>
+#import "EventOrganizersViewController.h"
 
-@interface EditEventViewController ()
+@interface EditSelectedEventViewController ()
 
 @property (nonatomic, strong) IBOutlet UILabel *eventTitle;
 @property (nonatomic, strong) IBOutlet UILabel *eventDate;
@@ -16,7 +18,7 @@
 
 @end
 
-@implementation EditEventViewController
+@implementation EditSelectedEventViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,12 +32,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *title = _eventObject[@"event_name"];
-    self.eventTitle.text = title;
-    self.eventLocation.text = _eventObject[@"event_start_date"];
-    self.eventDate.text = _eventObject[@"event_location"];
-    
 	// Do any additional setup after loading the view.
+   self.eventTitle.text = self.eventObject[@"event_name"];
+    self.eventLocation.text = self.eventObject[@"event_location"];
+    self.eventDate.text = [NSString stringWithFormat:@"%@",
+                           self.eventObject[@"event_start_date"]];
+    //self.eventLocation.text = self.eventObject[@"event_start_date"];
+   // self.eventDate.text = self.eventObject[@"event_location"];
+
 }
 
 - (void)didReceiveMemoryWarning

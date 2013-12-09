@@ -7,7 +7,7 @@
 //
 
 #import "EventOrganizersViewController.h"
-#import "EditEventViewController.h"
+#import "EditSelectedEventViewController.h"
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 
@@ -112,7 +112,7 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
-    [query orderByDescending:@"createdAt"];
+    //[query orderByDescending:@"createdAt"];
     
     return query;
 }
@@ -137,16 +137,16 @@
     return cell;
 }
 
-
-/*- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"showFactDetails"]) {
-        EditEventViewController *detailViewController = [segue destinationViewController];
+/*
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"showEventDetails"]) {
+        _parentViewController *detailViewController = [segue destinationViewController];
         
         NSIndexPath *index = [self.tableView indexPathForSelectedRow];
-        detailViewController.objectID = [self. objectAtIndex:index.row];
+        detailViewController.eventObject = [self.objects objectAtIndex:index.row];
     }
-}*/
-
+}
+*/
 
 /*
  // Override to customize what kind of query to perform on the class. The default is to query for
@@ -217,7 +217,7 @@
  }
  */
 
-#pragma mark - UITableViewDataSource
+//#pragma mark - UITableViewDataSource
 
 /*
  // Override to support conditional editing of the table view.
@@ -259,6 +259,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    //UINavigationController *navController = [[UINavigationController alloc] init];
+    //[self.view addSubview:navController.view];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditSelectedEventViewController *detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"editEventDetail"];
+    //EditSelectedEventViewController *detailViewController = [[EditSelectedEventViewController alloc] init];
+    detailViewController.eventObject = [self.objects objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:detailViewController animated:YES];
+
 }
 
 @end
