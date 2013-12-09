@@ -7,7 +7,7 @@
 //
 
 #import "InitialViewController.h"
-#import "EventOrganizerTableViewController.h"
+#import "EventOrganizersViewController.h"
 #import "EventsListViewController.h"
 
 @interface InitialViewController ()
