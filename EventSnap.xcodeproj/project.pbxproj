@@ -40,6 +40,7 @@
 		5750E9B2183C5ABB00345D27 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B1183C5ABB00345D27 /* Security.framework */; };
 		5750E9B4183C5AC000345D27 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B3183C5AC000345D27 /* StoreKit.framework */; };
 		5750E9B6183C5AC600345D27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */; };
+		57BC2CC3185695AA003D8B54 /* EventOrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */; };
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
 		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
 		57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */; };
@@ -195,6 +196,10 @@
 				110110AD183098EC00364860 /* Main.storyboard */,
 				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
 				57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */,
+				11374FCA184F86FF00BD1853 /* SharePhotoViewController.h */,
+				11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */,
+				11F68E011844B7C1006118F9 /* LoginViewController.h */,
+				11F68E021844B7C1006118F9 /* LoginViewController.m */,
 				57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */,
 				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
@@ -349,13 +354,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57BC2CC3185695AA003D8B54 /* EventOrganizersViewController.m in Sources */,
 				118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */,
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
 				57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */,
-				5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
 				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,
