@@ -226,20 +226,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lZ6-7S-dDZ">
-                            <size key="itemSize" width="319" height="108"/>
+                            <size key="itemSize" width="100" height="100"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="lof-Wf-5vk">
-                                <rect key="frame" x="1" y="64" width="319" height="108"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="lof-Wf-5vk" customClass="PhotoStreamViewCell">
+                                <rect key="frame" x="0.0" y="64" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="319" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fb6-AJ-Wvv">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <outlet property="imageView" destination="fb6-AJ-Wvv" id="ofg-re-gEo"/>
+                                    <segue destination="r2a-xJ-7EH" kind="push" identifier="PhotoDetailSegue" id="FlZ-mH-V0R"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -268,6 +278,34 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Z7-aU-Av5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1744" y="1445"/>
+        </scene>
+        <!--Photo Stream Image View Controller - Photo-->
+        <scene sceneID="v77-g8-zDM">
+            <objects>
+                <viewController id="r2a-xJ-7EH" customClass="PhotoStreamImageViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1A8-oA-Qh1"/>
+                        <viewControllerLayoutGuide type="bottom" id="80b-PU-3mm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UCB-gi-rlB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Tzt-ux-2Tt">
+                                <rect key="frame" x="0.0" y="63" width="320" height="514"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Photo" id="CTF-dx-fRZ"/>
+                    <connections>
+                        <outlet property="imageView" destination="Tzt-ux-2Tt" id="sQR-Qu-AZb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lcl-ut-zDA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2227" y="2153"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WrC-xi-8qu">
@@ -748,6 +786,23 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCA-cw-j1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3163" y="685"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1hL-rX-OBa">
+            <objects>
+                <viewController id="xYB-NR-2K6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GQM-ae-gMq"/>
+                        <viewControllerLayoutGuide type="bottom" id="EBe-rq-YKp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="brh-bN-ykr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB6-U4-1Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>

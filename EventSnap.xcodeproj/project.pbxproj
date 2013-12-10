@@ -23,13 +23,13 @@
 		111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC51842EFD600A9CF91 /* InitialViewController.m */; };
 		11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FC8184F71F300BD1853 /* SWRevealViewController.m */; };
 		11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */; };
-		11374FCD184F8C8F00BD1853 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		11374FD6184F93A500BD1853 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 110110AD183098EC00364860 /* Main.storyboard */; };
 		11374FD8184F940B00BD1853 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FC8184F71F300BD1853 /* SWRevealViewController.m */; };
+		118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0018567BF500865676 /* PhotoStreamViewController.m */; };
+		118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0318568B0500865676 /* PhotoStreamViewCell.m */; };
+		118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */; };
 		57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		57285F29184F85A200CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
-		57285F2F184F881800CBBA43 /* EventOrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */; };
-		5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5734DACD184EDF6900D62467 /* PhotoStreamViewController.m */; };
 		5750E9A4183C5A7500345D27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A3183C5A7500345D27 /* Parse.framework */; };
 		5750E9A6183C5A9300345D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A5183C5A9300345D27 /* AudioToolbox.framework */; };
 		5750E9A8183C5A9800345D27 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A7183C5A9800345D27 /* CFNetwork.framework */; };
@@ -82,14 +82,18 @@
 		11374FC8184F71F300BD1853 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SWRevealViewController.m; path = ../SWRevealViewController.m; sourceTree = "<group>"; };
 		11374FCA184F86FF00BD1853 /* SharePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharePhotoViewController.h; sourceTree = "<group>"; };
 		11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharePhotoViewController.m; sourceTree = "<group>"; };
+		118B1DFF18567BE500865676 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewController.h; sourceTree = "<group>"; };
+		118B1E0018567BF500865676 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewController.m; sourceTree = "<group>"; };
+		118B1E0218568B0500865676 /* PhotoStreamViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewCell.h; sourceTree = "<group>"; };
+		118B1E0318568B0500865676 /* PhotoStreamViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewCell.m; sourceTree = "<group>"; };
+		118B1E0518568FF700865676 /* PhotoStreamImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamImageViewController.h; sourceTree = "<group>"; };
+		118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamImageViewController.m; sourceTree = "<group>"; };
 		11F68E011844B7C1006118F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		11F68E021844B7C1006118F9 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		57285F22184F0EDB00CBBA43 /* EventsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsListViewController.h; sourceTree = "<group>"; };
 		57285F23184F0EDB00CBBA43 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
-		57285F25184F0F0900CBBA43 /* EventOrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventOrganizersViewController.h; sourceTree = "<group>"; };
-		57285F26184F0F0900CBBA43 /* EventOrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizersViewController.m; sourceTree = "<group>"; };
-		5734DACC184EDF6800D62467 /* PhotoStreamViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamViewController.h; sourceTree = "<group>"; };
-		5734DACD184EDF6900D62467 /* PhotoStreamViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewController.m; sourceTree = "<group>"; };
+		57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventOrganizersViewController.h; sourceTree = "<group>"; };
+		57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizersViewController.m; sourceTree = "<group>"; };
 		5750E9A3183C5A7500345D27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5750E9A5183C5A9300345D27 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5750E9A7183C5A9800345D27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -190,6 +194,8 @@
 				11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */,
 				11F68E011844B7C1006118F9 /* LoginViewController.h */,
 				11F68E021844B7C1006118F9 /* LoginViewController.m */,
+				57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */,
+				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
 				111B7DC51842EFD600A9CF91 /* InitialViewController.m */,
 				57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */,
@@ -198,8 +204,12 @@
 				57285F23184F0EDB00CBBA43 /* EventsListViewController.m */,
 				110110B0183098EC00364860 /* FirstViewController.h */,
 				110110B1183098EC00364860 /* FirstViewController.m */,
-				5734DACC184EDF6800D62467 /* PhotoStreamViewController.h */,
-				5734DACD184EDF6900D62467 /* PhotoStreamViewController.m */,
+				118B1DFF18567BE500865676 /* PhotoStreamViewController.h */,
+				118B1E0018567BF500865676 /* PhotoStreamViewController.m */,
+				118B1E0218568B0500865676 /* PhotoStreamViewCell.h */,
+				118B1E0318568B0500865676 /* PhotoStreamViewCell.m */,
+				118B1E0518568FF700865676 /* PhotoStreamImageViewController.h */,
+				118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */,
 				110110B3183098EC00364860 /* SecondViewController.h */,
 				110110B4183098EC00364860 /* SecondViewController.m */,
 				11374FC7184F71F200BD1853 /* SWRevealViewController.h */,
@@ -338,17 +348,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */,
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
-				5734DACE184EDF6900D62467 /* PhotoStreamViewController.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
+				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,
 				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
+				118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */,
 				11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */,
-				57285F28184F848E00CBBA43 /* EventOrganizersViewController.m in Sources */,
 				11374FD8184F940B00BD1853 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,7 +368,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11374FCD184F8C8F00BD1853 /* EventsListViewController.m in Sources */,
+				57285F29184F85A200CBBA43 /* EventsListViewController.m in Sources */,
 				11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
