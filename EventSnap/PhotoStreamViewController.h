@@ -10,6 +10,7 @@
 
 @interface PhotoStreamViewController : UICollectionViewController
 
+@property (strong, nonatomic) NSArray *photoStreamImages;
 - (IBAction)transitionToCamera:(id)sender;
 
 @end
