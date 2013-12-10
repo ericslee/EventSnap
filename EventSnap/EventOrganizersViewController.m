@@ -26,6 +26,7 @@
         // The className to query on
         self.parseClassName = @"Events";
         
+        
         // The key of the PFObject to display in the label of the default cell style
         self.textKey = @"event_name";
         
@@ -36,7 +37,7 @@
         self.paginationEnabled = YES;
         
         // The number of objects to show per page
-        self.objectsPerPage = 25;
+        self.objectsPerPage = 20;
     }
     return self;
 }
@@ -106,6 +107,7 @@
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
+    [query whereKey:@"event_organizer" equalTo:[PFUser currentUser]];
     // If no objects are loaded in memory, we look to the cache first to fill the table
     // and then subsequently do a query against the network.
     if (self.objects.count == 0) {
@@ -128,7 +130,7 @@
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
                                       reuseIdentifier:cellIdentifier];
     }
-    
+     
     // Configure the cell to show item
     cell.textLabel.text = object[@"event_name"];
     cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",

@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Parse/Parse.h"
 #import "EventsListViewController.h"
+#import "PhotoStreamViewController.h"
 
 @interface EventsListViewController ()
 
@@ -250,6 +251,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [super tableView:tableView didSelectRowAtIndexPath:indexPath];
+    //UINavigationController *navController = [[UINavigationController alloc] init];
+    //[self.view addSubview:navController.view];
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    PhotoStreamViewController *photoViewController = [storyboard instantiateViewControllerWithIdentifier:@"PhotoStream"];
+    //EditSelectedEventViewController *detailViewController = [[EditSelectedEventViewController alloc] init];
+    photoViewController.eventObject = [self.objects objectAtIndex:indexPath.row];
+    [self.navigationController pushViewController:photoViewController animated:YES];
+    
 }
 
 @end

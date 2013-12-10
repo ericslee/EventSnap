@@ -224,16 +224,9 @@
         self.eventObject[@"event_hashtags"] = hashTagsField.text;
         NSLog(@"updated object");
         [self.eventObject saveInBackground];
-        
-        //UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-        //EditSelectedEventViewController *editViewController = [storyboard instantiateViewControllerWithIdentifier:@"editEventDetail"];
-        //editViewController.eventObject = self.eventObject;
-        //[self segueForUnwindingToViewController:editViewController fromViewController:self identifier:@"editEventDetail"];
-        
-                //editViewController.eventObject = self.eventObject;
-        //[self.navigationController pushViewController:editViewController animated:YES];
+        EditSelectedEventViewController *selected = [[EditSelectedEventViewController alloc] init];
+        selected.eventObject = self.eventObject;
         [self.navigationController popViewControllerAnimated:YES];
-        //[self dismissViewControllerAnimated:YES completion:nil];
     }
     
 }

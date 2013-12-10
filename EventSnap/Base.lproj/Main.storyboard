@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5aQ-Dv-yxc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4504" systemVersion="12E55" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="5aQ-Dv-yxc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3734.1"/>
     </dependencies>
     <scenes>
         <!--Second View Controller - Second-->
@@ -199,9 +199,9 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="AaG-t1-CG9">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4lA-dF-qjN">
-                                <rect key="frame" x="106" y="7" width="198" height="30"/>
+                                <rect key="frame" x="274" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Temp Button to go to photos">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -221,7 +221,7 @@
         <!--Photo Stream View Controller-->
         <scene sceneID="hy6-7c-4md">
             <objects>
-                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="MbC-gq-muS" customClass="PhotoStreamViewController" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="PhotoStream" autoresizesArchivedViewToFullSize="NO" id="MbC-gq-muS" customClass="PhotoStreamViewController" sceneMemberID="viewController">
                     <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="YXE-0u-PoF">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -435,14 +435,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="43"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g5t-El-nUE">
-                                <rect key="frame" x="94" y="204" width="133" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title="Search Events ">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7oJ-LY-mCG">
                                 <rect key="frame" x="173" y="398" width="112" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -461,10 +453,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H3K-Ei-XMp">
-                                <rect key="frame" x="126" y="261" width="68" height="79"/>
+                                <rect key="frame" x="81" y="208" width="159" height="79"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Go">
+                                <state key="normal" title="Search Events">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -738,8 +730,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="editEventInformation:" destination="UmK-8h-9Pu" eventType="touchUpInside" id="qV7-cs-R6Y"/>
-                                    <segue destination="vZf-GH-Q4T" kind="push" identifier="editEventInfo" id="Riu-jV-WY5"/>
+                                    <action selector="editEventInformation:" destination="UmK-8h-9Pu" eventType="touchUpInside" id="xRq-Jo-FrQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jH-xU-t6z">
@@ -766,6 +757,7 @@
                         <outlet property="eventDate" destination="TN8-Wv-Usd" id="rDw-ib-sEG"/>
                         <outlet property="eventLocation" destination="ON4-Dg-D5V" id="IPZ-g9-bCv"/>
                         <outlet property="eventTitle" destination="Ct2-eI-mS5" id="9hZ-bX-Z2x"/>
+                        <segue destination="vZf-GH-Q4T" kind="push" identifier="editEventInfo" id="rrJ-ST-wBx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hO-FG-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -831,7 +823,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Edit Event" id="nwq-UL-MUM">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="yLt-Ro-CvJ">
+                                        <barButtonItem key="leftBarButtonItem" id="yLt-Ro-CvJ">
                                             <connections>
                                                 <action selector="goBack:" destination="vZf-GH-Q4T" id="NBQ-nL-7Zt"/>
                                             </connections>
