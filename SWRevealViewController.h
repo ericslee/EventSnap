@@ -66,6 +66,7 @@
 
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @class SWRevealViewController;
 @protocol SWRevealViewControllerDelegate;
@@ -107,6 +108,10 @@ typedef enum
 
 // Object instance init and rear view setting
 - (id)initWithRearViewController:(UIViewController *)rearViewController frontViewController:(UIViewController *)frontViewController;
+
+//parse event object
+//@property (strong, nonatomic) PFObject *eventObject;
+
 
 // Rear view controller, can be nil if not used
 @property (strong, nonatomic) UIViewController *rearViewController;

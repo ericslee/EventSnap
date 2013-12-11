@@ -40,6 +40,7 @@
 		5750E9B2183C5ABB00345D27 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B1183C5ABB00345D27 /* Security.framework */; };
 		5750E9B4183C5AC000345D27 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B3183C5AC000345D27 /* StoreKit.framework */; };
 		5750E9B6183C5AC600345D27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */; };
+		5759D7AD1858E24B009F4497 /* NavigationToAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */; };
 		57BC2CC3185695AA003D8B54 /* EventOrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */; };
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
 		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
@@ -106,6 +107,8 @@
 		5750E9B1183C5ABB00345D27 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		5750E9B3183C5AC000345D27 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationToAddPhoto.h; sourceTree = "<group>"; };
+		5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationToAddPhoto.m; sourceTree = "<group>"; };
 		57D1A13C184F8E6500F7AB8C /* CreateNewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewEventViewController.h; sourceTree = "<group>"; };
 		57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewEventViewController.m; sourceTree = "<group>"; };
 		57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSelectedEventViewController.h; sourceTree = "<group>"; };
@@ -194,6 +197,8 @@
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
+				5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */,
+				5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */,
 				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
 				57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */,
 				11374FCA184F86FF00BD1853 /* SharePhotoViewController.h */,
@@ -361,6 +366,7 @@
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
 				57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */,
+				5759D7AD1858E24B009F4497 /* NavigationToAddPhoto.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
 				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,

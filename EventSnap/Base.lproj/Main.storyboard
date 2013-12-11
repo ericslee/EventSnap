@@ -17,11 +17,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBz-rA-7ci">
-                                <rect key="frame" x="-6" y="57" width="326" height="414"/>
+                                <rect key="frame" x="-9" y="101" width="326" height="361"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-8D-0ad">
-                                <rect key="frame" x="0.0" y="471" width="320" height="44"/>
+                                <rect key="frame" x="-3" y="57" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem style="plain" id="G3x-hP-4zt">
@@ -100,12 +100,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3745" y="605"/>
+            <point key="canvasLocation" x="3009" y="937"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="irw-p2-IOH">
             <objects>
-                <viewController id="qKm-ga-Pmk" customClass="SWRevealViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CameraView" id="qKm-ga-Pmk" customClass="SWRevealViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="DvG-RJ-2UK"/>
                         <viewControllerLayoutGuide type="bottom" id="L2C-Lm-aFh"/>
@@ -118,12 +118,12 @@
                     <navigationItem key="navigationItem" id="ylf-gU-8g9"/>
                     <connections>
                         <segue destination="r04-u8-wkI" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegue" id="UQ9-dM-ey6"/>
-                        <segue destination="tL7-sZ-wft" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="HPZ-b6-zTE"/>
+                        <segue destination="QUy-BD-bpt" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegue" id="Emc-od-klF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="auq-0h-nsi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2227" y="1445"/>
+            <point key="canvasLocation" x="2381" y="1303"/>
         </scene>
         <!--Share Photo View Controller-->
         <scene sceneID="FEq-bG-hEo">
@@ -847,46 +847,7 @@
             </objects>
             <point key="canvasLocation" x="2472" y="85"/>
         </scene>
-        <!--Navigation Controller - Second-->
-        <scene sceneID="W8L-Ed-lbO">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tL7-sZ-wft" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="Z7h-1E-pvt"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="y9g-3v-qHN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="QUy-BD-bpt" kind="relationship" relationship="rootViewController" id="ZOg-Da-UCs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YCA-cw-j1F" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3163" y="685"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="1hL-rX-OBa">
-            <objects>
-                <viewController id="xYB-NR-2K6" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="GQM-ae-gMq"/>
-                        <viewControllerLayoutGuide type="bottom" id="EBe-rq-YKp"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="brh-bN-ykr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZB6-U4-1Ib" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
     </scenes>
-    <resources>
-        <image name="second" width="30" height="30"/>
-    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

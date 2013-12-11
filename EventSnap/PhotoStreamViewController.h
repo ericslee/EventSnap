@@ -11,8 +11,8 @@
 
 @interface PhotoStreamViewController : UICollectionViewController
 
-@property (strong, nonatomic) NSArray *photoStreamImages;
-@property (strong, nonatomic) PFObject *eventObject;
+@property (strong, nonatomic) NSMutableArray *photoStreamImages;
+@property (nonatomic, strong) PFObject *eventObject;
 - (IBAction)transitionToCamera:(id)sender;
 
 @end

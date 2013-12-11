@@ -9,6 +9,7 @@
 #import "PhotoStreamViewController.h"
 #import "PhotoStreamViewCell.h"
 #import "PhotoStreamImageViewController.h"
+#import "AppDelegate.h"
 
 @interface PhotoStreamViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -29,10 +30,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSArray *eventPointers = self.eventObject[@"event_pictures"];
+    NSMutableArray *eventPictures = [NSMutableArray array];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    if (eventPointers.count == 0) {
+        _photoStreamImages = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
+    }
+    else {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            NSData *data = [file getData];
+            UIImage *eventImage = [UIImage imageWithData:data];
+            [eventPictures addObject:eventImage];
+        
+    }
+        _photoStreamImages = eventPictures;
+    }
     
-    
-    // INSERT IMAGES FROM PARSE INTO THIS ARRAY (can use NSMutableArray instead if that's easier)
-    _photoStreamImages = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,7 +68,7 @@
     static NSString *identifier = @"Cell";
     PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:[_photoStreamImages objectAtIndex:indexPath.row]];
+    cell.imageView.image = [_photoStreamImages objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -64,12 +80,14 @@
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
         
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
-        vc.image = [UIImage imageNamed:[_photoStreamImages objectAtIndex:indexPath.row]];
+        vc.image = [_photoStreamImages objectAtIndex:indexPath.row];
     }
 }
 
 - (IBAction)transitionToCamera:(id)sender
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.currentEventObject = self.eventObject;
     [self performSegueWithIdentifier:@"CameraView" sender:self];
 }
 

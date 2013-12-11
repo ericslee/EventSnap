@@ -9,6 +9,7 @@
 #import "SecondViewController.h"
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
+#import "AppDelegate.h"
 
 
 @interface SecondViewController ()
@@ -29,6 +30,8 @@
     _sidebarButton.title = @"ShareButton";
     _sidebarButton.target = self.revealViewController;
     _sidebarButton.action = @selector(revealToggle:);
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.eventObject = appDelegate.currentEventObject;
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
@@ -147,11 +150,15 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             //2
             //Add the image to the object, and add the comment and the user
             PFObject *imageObject = [PFObject objectWithClassName:@"ImageObject"];
-            [imageObject setObject:file forKey:@"image"];
+            imageObject[@"image"] = file;
+            
+            [self.eventObject addObject:imageObject forKey:@"event_pictures"];
+            
+            //[imageObject setObject:file forKey:@"image"];
             //[imageObject setObject:[PFUser currentUser].username forKey:@"user"];
             //[imageObject setObject:self.commentTextField.text forKey:@"comment"];
             //3
-            [imageObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            [self.eventObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //4
                 if (succeeded){
                     // Display success alert
