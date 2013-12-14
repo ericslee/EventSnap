@@ -33,10 +33,7 @@
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
     NSMutableArray *eventPictures = [NSMutableArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
-    if (eventPointers.count == 0) {
-        _photoStreamImages = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
-    }
-    else {
+    if (eventPointers.count != 0) {
         for (int i = 0; i < eventPointers.count; i++){
             PFObject *eventPic = [eventPointers objectAtIndex:i];
             PFObject *picObj = [query getObjectWithId:eventPic.objectId];
@@ -59,7 +56,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 16;
+    return [_photoStreamImages count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -68,7 +65,9 @@
     static NSString *identifier = @"Cell";
     PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.imageView.image = [_photoStreamImages objectAtIndex:indexPath.row];
+    if ([_photoStreamImages count] != 0) {
+        cell.imageView.image = _photoStreamImages[indexPath.row];
+    }
     
     return cell;
 }
@@ -80,7 +79,7 @@
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
         
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
-        vc.image = [_photoStreamImages objectAtIndex:indexPath.row];
+        vc.image = _photoStreamImages[indexPath.row];
     }
 }
 
