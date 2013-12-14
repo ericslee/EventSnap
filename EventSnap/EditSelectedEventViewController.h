@@ -8,10 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "EditEventPhotos.h"
 
 @interface EditSelectedEventViewController : UIViewController
 
 @property (nonatomic, strong) PFObject *eventObject;
+@property (strong, nonatomic) NSMutableArray *photoStreamImages;
+@property (nonatomic, weak) UICollectionView *collectionView;
 
 - (IBAction)editEventInformation:(id)sender;
 

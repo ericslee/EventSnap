@@ -8,11 +8,15 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "MBProgressHUD.h"
 
-@interface PhotoStreamViewController : UICollectionViewController
+@interface PhotoStreamViewController : UICollectionViewController {
+    MBProgressHUD *refreshHUD;
+    NSMutableArray *eventPictures;
+}
 
-@property (strong, nonatomic) NSArray *photoStreamImages;
-@property (strong, nonatomic) PFObject *eventObject;
+@property (strong, nonatomic) NSMutableArray *photoStreamImages;
+@property (nonatomic, strong) PFObject *eventObject;
 - (IBAction)transitionToCamera:(id)sender;
 
 @end

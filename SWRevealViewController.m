@@ -28,6 +28,7 @@
 #import <UIKit/UIGestureRecognizerSubclass.h>
 
 #import "SWRevealViewController.h"
+#import "SecondViewController.h"
 
 #pragma mark - SWDirectionPanGestureRecognizer
 
@@ -455,6 +456,7 @@ static NSString * const SWSegueRightIdentifier = @"sw_right";
         {
             segue.performBlock = ^(SWRevealViewControllerSegue* rvc_segue, UIViewController* svc, UIViewController* dvc)
             {
+                
                 [self _setRearViewController:dvc];
             };
         }

@@ -228,7 +228,13 @@
         selected.eventObject = self.eventObject;
         [self.navigationController popViewControllerAnimated:YES];
     }
-    
+}
+
+- (IBAction)deleteEvent:(id)sender{
+    [self.eventObject deleteInBackground];
+    EditSelectedEventViewController *selected = [[EditSelectedEventViewController alloc] init];
+    [selected.eventObject deleteInBackground];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 @end

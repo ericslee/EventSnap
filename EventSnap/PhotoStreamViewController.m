@@ -9,6 +9,7 @@
 #import "PhotoStreamViewController.h"
 #import "PhotoStreamViewCell.h"
 #import "PhotoStreamImageViewController.h"
+#import "AppDelegate.h"
 
 @interface PhotoStreamViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -29,10 +30,22 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    NSArray *eventPointers = self.eventObject[@"event_pictures"];
+    eventPictures = [NSMutableArray array];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    if (eventPointers.count != 0) {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            NSData *data = [file getData];
+            UIImage *eventImage = [UIImage imageWithData:data];
+            [eventPictures addObject:eventImage];
+        
+    }
+        _photoStreamImages = eventPictures;
+    }
     
-    
-    // INSERT IMAGES FROM PARSE INTO THIS ARRAY (can use NSMutableArray instead if that's easier)
-    _photoStreamImages = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,7 +56,7 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 16;
+    return [_photoStreamImages count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -52,7 +65,10 @@
     static NSString *identifier = @"Cell";
     PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:[_photoStreamImages objectAtIndex:indexPath.row]];
+    if ([_photoStreamImages count] !=
+        0) {
+        cell.imageView.image = _photoStreamImages[indexPath.row];
+    }
     
     return cell;
 }
@@ -64,13 +80,62 @@
         NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
         
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
-        vc.image = [UIImage imageNamed:[_photoStreamImages objectAtIndex:indexPath.row]];
+        vc.image = _photoStreamImages[indexPath.row];
     }
+    [self queryForTable];
+
+    [segue destinationViewController];
 }
 
 - (IBAction)transitionToCamera:(id)sender
 {
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.currentEventObject = self.eventObject;
     [self performSegueWithIdentifier:@"CameraView" sender:self];
 }
+
+
+- (void)queryForTable
+{
+    NSArray *eventPointers = self.eventObject[@"event_pictures"];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    [query orderByAscending:@"createdAt"];
+    [query setCachePolicy:kPFCachePolicyNetworkOnly];
+    
+    NSMutableArray *dataArray = [[NSMutableArray alloc]init];
+    
+    if (eventPointers.count != 0) {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            //NSData *data = [file getData];
+            //UIImage *eventImage = [UIImage imageWithData:data];
+            //[eventPictures addObject:eventImage];
+            [dataArray addObject:file];
+            
+        }
+        //_photoStreamImages = eventPictures;
+    }
+    for (PFFile *object in dataArray) {
+        [object getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if (!error) {
+                        // Now that the data is fetched, update the cell's image property with thumbnail
+                        
+                        NSLog(@"Fetching image..");
+                        
+                        [_photoStreamImages addObject:[UIImage imageWithData:data]];
+                        
+                        NSLog(@"Size of the gridImages array: %d", [_photoStreamImages count]);
+                        
+                    } else {
+                        // Log details of the failure
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
+            }
+}
+
+
 
 @end
