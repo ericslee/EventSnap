@@ -144,49 +144,52 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
+    HUD = [[MBProgressHUD alloc] initWithView:self.view];
+    [self.view addSubview:HUD];
+    
+    HUD.mode = MBProgressHUDModeDeterminate;
+    HUD.delegate = self;
+    HUD.labelText = @"Uploading";
+    [HUD show:YES];
+    
+    
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         
         if (succeeded){
             //2
-            //Add the image to the object, and add the comment and the user
+            
+            //setting up loading button
+            [HUD hide:YES];
+            HUD = [[MBProgressHUD alloc] initWithView:self.view];
+            [self.view addSubview:HUD];
+            HUD.mode = MBProgressHUDModeCustomView;
+            HUD.delegate = self;
+            
             PFObject *imageObject = [PFObject objectWithClassName:@"ImageObject"];
             imageObject[@"image"] = file;
             
             [self.eventObject addObject:imageObject forKey:@"event_pictures"];
             
-            //[imageObject setObject:file forKey:@"image"];
-            //[imageObject setObject:[PFUser currentUser].username forKey:@"user"];
-            //[imageObject setObject:self.commentTextField.text forKey:@"comment"];
             //3
             [self.eventObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //4
-                if (succeeded){
-                    // Display success alert
-                    UIAlertView *uploadedImageAlert = [[UIAlertView alloc] initWithTitle:@"Success"
-                                                                                message:@"Image successfully uploaded to photo stream."
-                                                                               delegate:self
-                                                                      cancelButtonTitle:@"Cool, thanks!"
-                                                                      otherButtonTitles:nil, nil];
-                    [uploadedImageAlert show];
-
-                    //Go back to the wall
+                if (!error) {
                     [self.navigationController popViewControllerAnimated:YES];
                 }
-                else{
-                    NSString *errorString = [[error userInfo] objectForKey:@"error"];
-                    UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
-                    [errorAlertView show];
+                else {
+                    NSLog(@"Error: %@ %@", error, [error userInfo]);
                 }
             }];
         }
         else{
             //5
+            [HUD hide:YES];
             NSString *errorString = [[error userInfo] objectForKey:@"error"];
             UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
             [errorAlertView show];
         }
     } progressBlock:^(int percentDone) {
-        NSLog(@"Uploaded: %d %%", percentDone);
+        HUD.progress = (float)percentDone/100;
     }];
 }
 
