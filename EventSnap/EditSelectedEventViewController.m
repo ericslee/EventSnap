@@ -26,7 +26,9 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        //if (self.eventObject == NULL){
+        //    [self.navigationController popViewControllerAnimated:YES];
+        //}
     }
     return self;
 }

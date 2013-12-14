@@ -870,7 +870,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit Event" id="mg5-qf-W2M"/>
+                    <navigationItem key="navigationItem" title="Edit Event" id="mg5-qf-W2M">
+                        <barButtonItem key="rightBarButtonItem" title="Delete" id="dxz-jG-EhX">
+                            <connections>
+                                <action selector="deleteEvent:" destination="vZf-GH-Q4T" id="lTG-MG-XsK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="endDateField" destination="Zav-TI-ztR" id="eFK-Rb-hJH"/>
                         <outlet property="eventNameField" destination="KD0-AA-iqa" id="amL-jP-rQA"/>
