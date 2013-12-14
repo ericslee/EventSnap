@@ -31,7 +31,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
-    NSMutableArray *eventPictures = [NSMutableArray array];
+    eventPictures = [NSMutableArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
     if (eventPointers.count != 0) {
         for (int i = 0; i < eventPointers.count; i++){
@@ -82,6 +82,9 @@
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
         vc.image = _photoStreamImages[indexPath.row];
     }
+    [self queryForTable];
+
+    [segue destinationViewController];
 }
 
 - (IBAction)transitionToCamera:(id)sender
@@ -90,5 +93,49 @@
     appDelegate.currentEventObject = self.eventObject;
     [self performSegueWithIdentifier:@"CameraView" sender:self];
 }
+
+
+- (void)queryForTable
+{
+    NSArray *eventPointers = self.eventObject[@"event_pictures"];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    [query orderByAscending:@"createdAt"];
+    [query setCachePolicy:kPFCachePolicyNetworkOnly];
+    
+    NSMutableArray *dataArray = [[NSMutableArray alloc]init];
+    
+    if (eventPointers.count != 0) {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            //NSData *data = [file getData];
+            //UIImage *eventImage = [UIImage imageWithData:data];
+            //[eventPictures addObject:eventImage];
+            [dataArray addObject:file];
+            
+        }
+        //_photoStreamImages = eventPictures;
+    }
+    for (PFFile *object in dataArray) {
+        [object getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    if (!error) {
+                        // Now that the data is fetched, update the cell's image property with thumbnail
+                        
+                        NSLog(@"Fetching image..");
+                        
+                        [_photoStreamImages addObject:[UIImage imageWithData:data]];
+                        
+                        NSLog(@"Size of the gridImages array: %d", [_photoStreamImages count]);
+                        
+                    } else {
+                        // Log details of the failure
+                        NSLog(@"Error: %@ %@", error, [error userInfo]);
+                    }
+                }];
+            }
+}
+
+
 
 @end

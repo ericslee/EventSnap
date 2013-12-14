@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "EventOrganizersViewController.h"
 #import "EditEventInformationViewController.h"
+#import "PhotoStreamViewCell.h"
 
 @interface EditSelectedEventViewController ()
 
@@ -34,13 +35,26 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-   self.eventTitle.text = self.eventObject[@"event_name"];
+    self.eventTitle.text = self.eventObject[@"event_name"];
     self.eventLocation.text = self.eventObject[@"event_location"];
     self.eventDate.text = [NSString stringWithFormat:@"%@",
                            self.eventObject[@"event_start_date"]];
-    //self.eventLocation.text = self.eventObject[@"event_start_date"];
-   // self.eventDate.text = self.eventObject[@"event_location"];
-
+    
+    NSArray *eventPointers = self.eventObject[@"event_pictures"];
+    NSMutableArray *eventPictures = [NSMutableArray array];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    if (eventPointers.count != 0) {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            NSData *data = [file getData];
+            UIImage *eventImage = [UIImage imageWithData:data];
+            [eventPictures addObject:eventImage];
+            
+        }
+        _photoStreamImages = eventPictures;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -55,5 +69,40 @@
         editInfoViewController.eventObject = self.eventObject;
         [self.navigationController pushViewController:editInfoViewController animated:YES];
 }
+
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    return [_photoStreamImages count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Set up cell identifier that matches the Storyboard cell name
+    static NSString *identifier = @"Cell";
+    PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
+    
+    if ([_photoStreamImages count] !=
+        0) {
+        cell.imageView.image = _photoStreamImages[indexPath.row];
+    }
+    
+    return cell;
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    /*if([segue.identifier isEqualToString:@"PhotoDetailSegue"]) {
+        PhotoStreamViewCell *cell = (PhotoStreamViewCell *)sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        
+        PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
+        vc.image = _photoStreamImages[indexPath.row];
+    }*/
+    [segue destinationViewController];
+}
+
+
+
 
 @end

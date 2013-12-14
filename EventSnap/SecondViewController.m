@@ -174,6 +174,7 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
             [self.eventObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
                 //4
                 if (!error) {
+                    //[self.delegate queryForTable];
                     [self.navigationController popViewControllerAnimated:YES];
                 }
                 else {

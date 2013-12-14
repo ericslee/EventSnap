@@ -45,6 +45,8 @@
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
 		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
 		57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */; };
+		57E55F92185BFCD3006F686F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E55F91185BFCD3006F686F /* MBProgressHUD.m */; };
+		57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E55F94185CC7DF006F686F /* EditEventPhotos.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +117,10 @@
 		57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditSelectedEventViewController.m; sourceTree = "<group>"; };
 		57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventInformationViewController.h; sourceTree = "<group>"; };
 		57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventInformationViewController.m; sourceTree = "<group>"; };
+		57E55F90185BFCD3006F686F /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		57E55F91185BFCD3006F686F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		57E55F93185CC7DF006F686F /* EditEventPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventPhotos.h; sourceTree = "<group>"; };
+		57E55F94185CC7DF006F686F /* EditEventPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventPhotos.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -196,6 +202,8 @@
 			children = (
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
+				57E55F90185BFCD3006F686F /* MBProgressHUD.h */,
+				57E55F91185BFCD3006F686F /* MBProgressHUD.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
 				5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */,
 				5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */,
@@ -221,6 +229,8 @@
 				118B1E0318568B0500865676 /* PhotoStreamViewCell.m */,
 				118B1E0518568FF700865676 /* PhotoStreamImageViewController.h */,
 				118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */,
+				57E55F93185CC7DF006F686F /* EditEventPhotos.h */,
+				57E55F94185CC7DF006F686F /* EditEventPhotos.m */,
 				110110B3183098EC00364860 /* SecondViewController.h */,
 				110110B4183098EC00364860 /* SecondViewController.m */,
 				11374FC7184F71F200BD1853 /* SWRevealViewController.h */,
@@ -366,11 +376,13 @@
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
 				57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */,
+				57E55F92185BFCD3006F686F /* MBProgressHUD.m in Sources */,
 				5759D7AD1858E24B009F4497 /* NavigationToAddPhoto.m in Sources */,
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
 				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,
 				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
+				57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
 				118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */,
 				11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */,

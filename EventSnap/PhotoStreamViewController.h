@@ -10,7 +10,10 @@
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
 
-@interface PhotoStreamViewController : UICollectionViewController
+@interface PhotoStreamViewController : UICollectionViewController {
+    MBProgressHUD *refreshHUD;
+    NSMutableArray *eventPictures;
+}
 
 @property (strong, nonatomic) NSMutableArray *photoStreamImages;
 @property (nonatomic, strong) PFObject *eventObject;
