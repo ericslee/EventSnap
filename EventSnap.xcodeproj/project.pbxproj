@@ -47,6 +47,7 @@
 		57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A14618565CA500F7AB8C /* EditEventInformationViewController.m */; };
 		57E55F92185BFCD3006F686F /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E55F91185BFCD3006F686F /* MBProgressHUD.m */; };
 		57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E55F94185CC7DF006F686F /* EditEventPhotos.m */; };
+		57E55F97185CFD69006F686F /* Main35.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E55F96185CFD69006F686F /* Main35.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		57E55F91185BFCD3006F686F /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		57E55F93185CC7DF006F686F /* EditEventPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditEventPhotos.h; sourceTree = "<group>"; };
 		57E55F94185CC7DF006F686F /* EditEventPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditEventPhotos.m; sourceTree = "<group>"; };
+		57E55F96185CFD69006F686F /* Main35.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main35.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				57E55F90185BFCD3006F686F /* MBProgressHUD.h */,
 				57E55F91185BFCD3006F686F /* MBProgressHUD.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
+				57E55F96185CFD69006F686F /* Main35.storyboard */,
 				5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */,
 				5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */,
 				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
@@ -348,6 +351,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57E55F97185CFD69006F686F /* Main35.storyboard in Resources */,
 				110110B7183098EC00364860 /* Images.xcassets in Resources */,
 				110110A6183098EC00364860 /* InfoPlist.strings in Resources */,
 				11374FD6184F93A500BD1853 /* Main.storyboard in Resources */,

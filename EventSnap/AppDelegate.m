@@ -21,6 +21,27 @@
     
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
     
+    CGSize iOSDeviceScreenSize = [[UIScreen mainScreen] bounds].size;
+    UIViewController *initialViewController;
+    if (iOSDeviceScreenSize.height == 480)
+    {
+        // Instantiate a new storyboard object using the storyboard file named Storyboard_iPhone35
+        UIStoryboard *iPhone35Storyboard = [UIStoryboard storyboardWithName:@"Main35" bundle:nil];
+        
+        // Instantiate the initial view controller object from the storyboard
+        initialViewController  = [iPhone35Storyboard instantiateInitialViewController];
+    }
+    
+    if (iOSDeviceScreenSize.height == 568)
+    {
+        // iPhone 5 and iPod Touch 5th generation: 4 inch screen
+        // Instantiate a new storyboard object using the storyboard file named Storyboard_iPhone4
+        UIStoryboard *iPhone4Storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        initialViewController  =  [iPhone4Storyboard instantiateInitialViewController];
+    }
+    self.window.rootViewController  = initialViewController;
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
@@ -50,5 +71,8 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+
 
 @end
