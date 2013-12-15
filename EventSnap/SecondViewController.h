@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <Parse/Parse.h>
-#import "BannerCollectionView.h"
 #import "MBProgressHUD.h"
 
 @interface SecondViewController : UIViewController <UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,

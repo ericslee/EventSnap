@@ -64,7 +64,11 @@
         }
         _banners = eventBanners;
     }
-    NSLog(@"Number of banners: %d", [eventBanners count]);
+    
+    // HARDCODED KITTY PICTURE PLACEHOLDER
+    _banners = [[NSMutableArray alloc] init];
+    [_banners addObject:[UIImage imageNamed:@"thumbnail"]];
+    NSLog(@"Number of banners: %d", [_banners count]);
     
     /*
      _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
@@ -100,8 +104,8 @@
     
     //cell.backgroundColor = [UIColor redColor];
     if ([_banners count] != 0) {
-        cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
-        //cell.imageView.image = _banners[indexPath.row];
+        //cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
+        cell.imageView.image = _banners[indexPath.row];
     }
     
     
