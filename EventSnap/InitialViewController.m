@@ -37,6 +37,12 @@
     else {
         _editEventButton.hidden = false;
     }
+    UIGraphicsBeginImageContext(self.view.frame.size);
+    [[UIImage imageNamed:@"mainPageBackground"] drawInRect:self.view.bounds];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
 - (void)didReceiveMemoryWarning
