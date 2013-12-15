@@ -775,7 +775,7 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dzV-o9-jxq" customClass="EditEventPhotos">
+                            <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dzV-o9-jxq">
                                 <rect key="frame" x="0.0" y="216" width="320" height="352"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="dHi-Hb-e8p">
@@ -792,29 +792,22 @@
                                             <rect key="frame" x="0.0" y="0.0" width="84" height="82"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="vWM-Oa-QdX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CST-Z0-NaZ">
                                                     <rect key="frame" x="0.0" y="0.0" width="84" height="82"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wt5-OM-wKe">
-                                                        <size key="itemSize" width="95" height="96"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                    </collectionViewFlowLayout>
-                                                    <imageView key="backgroundView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" id="CST-Z0-NaZ">
-                                                        <rect key="frame" x="0.0" y="0.0" width="84" height="82"/>
-                                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    </imageView>
-                                                    <cells/>
-                                                </collectionView>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <outlet property="imageView" destination="CST-Z0-NaZ" id="Kh0-xs-p2v"/>
+                                            <segue destination="r2a-xJ-7EH" kind="push" identifier="PhotoDetailSegue" id="c1B-bz-9oC"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                                 <connections>
-                                    <outlet property="dataSource" destination="UmK-8h-9Pu" id="S2a-Si-jnD"/>
-                                    <outlet property="delegate" destination="UmK-8h-9Pu" id="Lvr-bd-Pgf"/>
+                                    <outlet property="dataSource" destination="UmK-8h-9Pu" id="LJX-eF-toK"/>
+                                    <outlet property="delegate" destination="UmK-8h-9Pu" id="ChS-X5-IrK"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -928,4 +921,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="c1B-bz-9oC"/>
+    </inferredMetricsTieBreakers>
 </document>

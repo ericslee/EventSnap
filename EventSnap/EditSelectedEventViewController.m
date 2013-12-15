@@ -11,6 +11,7 @@
 #import "EventOrganizersViewController.h"
 #import "EditEventInformationViewController.h"
 #import "PhotoStreamViewCell.h"
+#import "PhotoStreamImageViewController.h"
 
 @interface EditSelectedEventViewController ()
 
@@ -41,6 +42,9 @@
     self.eventLocation.text = self.eventObject[@"event_location"];
     self.eventDate.text = [NSString stringWithFormat:@"%@",
                            self.eventObject[@"event_start_date"]];
+    
+    // Set up event images
+    _collectionView.delegate = self;
     
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
     NSMutableArray *eventPictures = [NSMutableArray array];
@@ -84,8 +88,7 @@
     static NSString *identifier = @"Cell";
     PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    if ([_photoStreamImages count] !=
-        0) {
+    if ([_photoStreamImages count] != 0) {
         cell.imageView.image = _photoStreamImages[indexPath.row];
     }
     
@@ -101,10 +104,17 @@
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
         vc.image = _photoStreamImages[indexPath.row];
     }*/
+    
+    if([segue.identifier isEqualToString:@"PhotoDetailSegue"]) {
+        PhotoStreamViewCell *cell = (PhotoStreamViewCell *)sender;
+        NSIndexPath *indexPath = [self.collectionView indexPathForCell:cell];
+        
+        PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
+        vc.image = _photoStreamImages[indexPath.row];
+    }
+    //[self queryForTable];
+    
     [segue destinationViewController];
 }
-
-
-
 
 @end
