@@ -37,7 +37,8 @@
     static NSString *identifier = @"BannerCell";
     BannerCollectionViewCell *cell = (BannerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:[_bannerImages objectAtIndex:indexPath.row]];
+    cell.backgroundColor = [UIColor redColor];
+    //cell.imageView.image = [UIImage imageNamed:[_bannerImages objectAtIndex:indexPath.row]];
     
     return cell;
 }

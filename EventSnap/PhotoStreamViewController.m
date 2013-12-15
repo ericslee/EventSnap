@@ -10,6 +10,7 @@
 #import "PhotoStreamViewCell.h"
 #import "PhotoStreamImageViewController.h"
 #import "AppDelegate.h"
+#import "MBProgressHUD.h"
 
 @interface PhotoStreamViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout>
 
@@ -42,10 +43,44 @@
             UIImage *eventImage = [UIImage imageWithData:data];
             [eventPictures addObject:eventImage];
         
-    }
+        }
         _photoStreamImages = eventPictures;
     }
     
+    /*
+    // create a UIRefreshControl for reloading the data in the stream with new images
+    UI*RefreshControl *refreshControl = [[UIRefreshControl alloc]
+                                        init];
+    refreshControl.tintColor = [UIColor whiteColor];
+    [refreshControl addTarget:self action:@selector(refreshTable:)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+    */
+}
+
+// refreshes the data in the table
+- (void)refreshTable:(UIRefreshControl *)refreshControl
+{
+    /*
+     // get new JSON table to pull from
+     NSData *profileData = [ESLWebRequestManager dataFromString:NUMBERS_URL];
+     _mainModel = [[ESLFunFactDataManager alloc] initWithNSData:profileData];
+     
+     // reload the table
+     [self.tableView reloadData];
+     
+     // stop the refreshing animation
+     [refreshControl endRefreshing];
+     
+     // animate the MBProgressHUD
+     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+     
+     NSData *profileData = [ESLWebRequestManager dataFromString:NUMBERS_URL];
+     _mainModel = [[ESLFunFactDataManager alloc] initWithNSData:profileData];
+     
+     // disable the MBProgressHUD
+     [MBProgressHUD hideHUDForView:self.view animated:YES];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -135,7 +170,5 @@
                 }];
             }
 }
-
-
 
 @end

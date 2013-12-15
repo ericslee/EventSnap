@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "SWRevealViewController.h"
 #import "BannerCollectionViewCell.h"
+#import "AppDelegate.h"
 
 @interface SecondViewController ()
 
@@ -22,9 +23,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    // Change button color
-    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
-    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.title = @"ShareButton";
     _sidebarButton.target = self.revealViewController;
@@ -34,18 +32,28 @@
     
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-
+    
     // Load banner images
     /*
-    _bannerImages.bannerImages = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
+     _banners = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
      */
-    _banners = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
     //[_bannerImages reloadData];
-    UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-    _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(0,0,320,200) collectionViewLayout:layout];
+    _bannerImages = [[UICollectionView alloc] initWithFrame:self.view.bounds];
+    /*
+     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
+     [layout setItemSize:CGSizeMake(100, 100)];
+     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
+     [_bannerImages setCollectionViewLayout:layout];
+     */
     _bannerImages.delegate = self;
-    _bannerImages.dataSource = self;
-    [_bannerImages reloadData];
+    /*
+     _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
+    //_bannerImages.dataSource = self;
+    //NSLog(@"%d", [_bannerImages numberOfSections]);
+    //[_bannerImages reloadData];
+    
+    // Change button color
+    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,7 +79,8 @@
     static NSString *identifier = @"BannerCell";
     BannerCollectionViewCell *cell = (BannerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
+    cell.backgroundColor = [UIColor redColor];
+    //cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
     
     return cell;
 }
