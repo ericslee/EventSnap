@@ -131,6 +131,7 @@
                     <connections>
                         <outlet property="bannerImages" destination="UuH-6j-QWx" id="RMQ-jg-1zk"/>
                         <outlet property="imageView" destination="kBz-rA-7ci" id="m4L-Jo-1uh"/>
+                        <outlet property="sidebarButton" destination="SYb-vB-fXk" id="dEp-NK-KGL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3qq-4t-Ow8" sceneMemberID="firstResponder"/>
