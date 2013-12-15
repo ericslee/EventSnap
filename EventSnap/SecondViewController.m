@@ -33,12 +33,7 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    // Load banner images
-    /*
-     _banners = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
-     */
-    //[_bannerImages reloadData];
-    _bannerImages = [[UICollectionView alloc] initWithFrame:self.view.bounds];
+    //_bannerImages = [[UICollectionView alloc] initWithFrame:self.view.bounds];
     /*
      UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
      [layout setItemSize:CGSizeMake(100, 100)];
@@ -46,6 +41,31 @@
      [_bannerImages setCollectionViewLayout:layout];
      */
     _bannerImages.delegate = self;
+    // Load banner images
+    /*
+     _banners = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
+    */
+    
+    // each event banner element
+    NSArray *eventPointers = self.eventObject[@"event_banners"];
+    eventBanners = [NSMutableArray array];
+    
+    // query for an object of class ImageObject
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    if (eventPointers.count != 0) {
+        for (int i = 0; i < eventPointers.count; i++){
+            PFObject *eventPic = [eventPointers objectAtIndex:i];
+            PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+            PFFile *file = picObj[@"image"];
+            NSData *data = [file getData];
+            UIImage *eventImage = [UIImage imageWithData:data];
+            [eventBanners addObject:eventImage];
+            
+        }
+        _banners = eventBanners;
+    }
+    NSLog(@"Number of banners: %d", [eventBanners count]);
+    
     /*
      _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
     //_bannerImages.dataSource = self;
@@ -63,24 +83,27 @@
 }
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    NSLog(@"Calling number of sections");
+    // only one row
     return 1;
 }
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    NSLog(@"Calling number of items in section");
-    return 16;
+    // the single row contains all the banners in the banners array
+    return [_banners count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"CellForItemAtIndexPath");
     // Set up cell identifier that matches the Storyboard cell name
     static NSString *identifier = @"BannerCell";
     BannerCollectionViewCell *cell = (BannerCollectionViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    cell.backgroundColor = [UIColor redColor];
-    //cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
+    //cell.backgroundColor = [UIColor redColor];
+    if ([_banners count] != 0) {
+        cell.imageView.image = [UIImage imageNamed:[_banners objectAtIndex:indexPath.row]];
+        //cell.imageView.image = _banners[indexPath.row];
+    }
+    
     
     return cell;
 }

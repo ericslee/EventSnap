@@ -15,6 +15,7 @@
 @interface SecondViewController : UIViewController <UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,
 UINavigationControllerDelegate> {
     MBProgressHUD *HUD;
+    NSMutableArray *eventBanners;
 }
 
 
@@ -22,7 +23,7 @@ UINavigationControllerDelegate> {
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *bannerImages;
-@property (strong, nonatomic) NSArray *banners;
+@property (strong, nonatomic) NSMutableArray *banners;
 @property (strong, nonatomic) PFObject *eventObject;
 @property (nonatomic) id delegate;
 

@@ -100,8 +100,7 @@
     static NSString *identifier = @"Cell";
     PhotoStreamViewCell *cell = (PhotoStreamViewCell *)[collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    if ([_photoStreamImages count] !=
-        0) {
+    if ([_photoStreamImages count] != 0) {
         cell.imageView.image = _photoStreamImages[indexPath.row];
     }
     
