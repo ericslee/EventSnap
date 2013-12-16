@@ -16,7 +16,11 @@
 
 @property (nonatomic, strong) PFObject *eventObject;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImage *bannerComposite;
 
 - (IBAction)saveBanner:(id)sender;
 - (IBAction)clearBanner:(id)sender;
+- (IBAction)addBanner:(id)sender;
+- (IBAction)changeToRedBanner:(id)sender;
+- (IBAction)changeToBlueBanner:(id)sender;
 @end

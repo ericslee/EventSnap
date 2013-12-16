@@ -27,6 +27,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    // Set the background image of the banner as transparent (very tiny image file size)
+    _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,11 +38,110 @@
     // Dispose of any resources that can be recreated.
 }
 
--(void)saveBanner:(id)sender {
+- (void)clearBanner:(id)sender
+{
     
+}
+
+- (void)addBanner:(id)sender
+{
+    // Set the background image of the banner as transparent (very tiny image file size)
+    _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
+    _imageView.image = _bannerComposite;
+    UIImage *img1 = _imageView.image;
+
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    
+    // Drawing Rect
+    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.5);   //this is the transparent color
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
+    CGContextFillRect(context, rectangle);
+    //CGContextStrokeRect(context, rectangle);    //this will draw the border
+ 
+    // composite the rectangle onto the existing banner
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+}
+
+- (void)changeToRedBanner:(id)sender
+{
+    // Set the background image of the banner as transparent (very tiny image file size)
+    _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
+    _imageView.image = _bannerComposite;
+    UIImage *img1 = _imageView.image;
+    
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    
+    // Drawing Rect
+    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 1.0, 0.0, 0.0, 0.5);   //this is the transparent color
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
+    CGContextFillRect(context, rectangle);
+    //CGContextStrokeRect(context, rectangle);    //this will draw the border
+    
+    // composite the rectangle onto the existing banner
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+}
+
+- (void)changeToBlueBanner:(id)sender
+{
+    // Set the background image of the banner as transparent (very tiny image file size)
+    _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
+    _imageView.image = _bannerComposite;
+    UIImage *img1 = _imageView.image;
+    
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    
+    // Drawing Rect
+    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 0.5);   //this is the transparent color
+    CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
+    CGContextFillRect(context, rectangle);
+    //CGContextStrokeRect(context, rectangle);    //this will draw the border
+    
+    // composite the rectangle onto the existing banner
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+}
+
+- (void)saveBanner:(id)sender
+{
+    /*
+    // Set the background image of the banner as transparent (very tiny image file size)
+    UIImage *img1 = _bannerComposite;
+    
+    // Get reference to banner image to add
+    UIImage *banner = [UIImage imageNamed:@"eventSnapLogo"];
+    
+    // Scale banner to screen width
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[banner CGImage]
+                        scale:(banner.scale * 1/9.0)
+                  orientation:(banner.imageOrientation)];
+    
+    UIGraphicsBeginImageContext(img1.size);
+    [img1 drawAtPoint:CGPointMake(0, 0)];
+    [scaledImage drawAtPoint:CGPointMake(0, 0)];
+    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    _imageView.image = resultingImage;
+    */
     // TESTING SENDING BANNERS TO PARSE USING MY KITTY
-    _imageView.image = [UIImage imageNamed:@"thumbnail"];
-    NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
+    //_imageView.image = [UIImage imageNamed:@"thumbnail"];
+    
+    NSData *pictureData = UIImagePNGRepresentation(_imageView.image);
+    //NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
