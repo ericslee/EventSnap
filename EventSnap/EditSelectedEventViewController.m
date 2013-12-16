@@ -12,6 +12,7 @@
 #import "EditEventInformationViewController.h"
 #import "PhotoStreamViewCell.h"
 #import "PhotoStreamImageViewController.h"
+#import "EditBannerViewController.h"
 
 @interface EditSelectedEventViewController ()
 
@@ -74,6 +75,14 @@
         EditEventInformationViewController *editInfoViewController = [storyboard instantiateViewControllerWithIdentifier:@"editEventInfo"];
         editInfoViewController.eventObject = self.eventObject;
         [self.navigationController pushViewController:editInfoViewController animated:YES];
+}
+
+- (IBAction)editBanners:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    EditBannerViewController *editBannerViewController = [storyboard instantiateViewControllerWithIdentifier:@"editBanners"];
+    editBannerViewController.eventObject = self.eventObject;
+    [self.navigationController pushViewController:editBannerViewController animated:YES];
 }
 
 

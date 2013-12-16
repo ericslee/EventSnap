@@ -645,6 +645,50 @@
             </objects>
             <point key="canvasLocation" x="2011" y="-711"/>
         </scene>
+        <!--Edit Banner View Controller-->
+        <scene sceneID="0ic-09-KOd">
+            <objects>
+                <viewController storyboardIdentifier="editBanners" id="2Nd-yY-BXp" customClass="EditBannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R1f-Uh-Yec"/>
+                        <viewControllerLayoutGuide type="bottom" id="QaI-lK-rpL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vmq-jK-DY2" customClass="EditEventPhotos">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Add Banner" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9yo-2a-ouO">
+                                <rect key="frame" x="90" y="76" width="141" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-mi-Yvv">
+                                <rect key="frame" x="245" y="72" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="ADD">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="xxb-06-NE2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUk-LC-RvG">
+                                <rect key="frame" x="40" y="110" width="240" height="242"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HEQ-Le-5ge"/>
+                    <connections>
+                        <outlet property="imageView" destination="gUk-LC-RvG" id="dCn-hh-0LW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yw6-NS-nN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2517" y="-701"/>
+        </scene>
         <!--Login-->
         <scene sceneID="CTx-NR-UQM">
             <objects>
@@ -766,6 +810,9 @@
                                 <state key="normal" title="Edit Banners">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="editBanners:" destination="UmK-8h-9Pu" eventType="touchUpInside" id="0uQ-Th-kaV"/>
+                                </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Scr-E4-HDI">
                                 <rect key="frame" x="0.0" y="5" width="320" height="44"/>
@@ -821,6 +868,7 @@
                         <outlet property="eventLocation" destination="ON4-Dg-D5V" id="IPZ-g9-bCv"/>
                         <outlet property="eventTitle" destination="Ct2-eI-mS5" id="9hZ-bX-Z2x"/>
                         <segue destination="vZf-GH-Q4T" kind="push" identifier="editEventInfo" id="rrJ-ST-wBx"/>
+                        <segue destination="2Nd-yY-BXp" kind="push" identifier="editBanners" id="amj-Al-oHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hO-FG-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>

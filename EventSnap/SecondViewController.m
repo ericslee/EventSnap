@@ -66,9 +66,9 @@
     }
     
     // HARDCODED KITTY PICTURE PLACEHOLDER
-    _banners = [[NSMutableArray alloc] init];
-    [_banners addObject:[UIImage imageNamed:@"thumbnail"]];
-    NSLog(@"Number of banners: %d", [_banners count]);
+    //_banners = [[NSMutableArray alloc] init];
+    //[_banners addObject:[UIImage imageNamed:@"thumbnail"]];
+    //NSLog(@"Number of banners: %d", [_banners count]);
     
     /*
      _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
