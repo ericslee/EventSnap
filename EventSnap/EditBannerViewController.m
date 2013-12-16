@@ -73,7 +73,9 @@
                 //4
                 if (!error) {
                     //[self.delegate queryForTable];
-                    [self.navigationController popViewControllerAnimated:YES];
+                    
+                    // Uncomment to automatically return to previous screen after saving
+                    //[self.navigationController popViewControllerAnimated:YES];
                 }
                 else {
                     NSLog(@"Error: %@ %@", error, [error userInfo]);

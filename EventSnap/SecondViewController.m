@@ -112,6 +112,12 @@
     return cell;
 }
 
+// perform action when a cell is selected
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    _bannerToAdd = _banners[indexPath.row];
+    [self addBanner:self];
+}
 
 // Change to camera
 - (void) useCamera:(id)sender
@@ -164,12 +170,17 @@
     // Get reference to banner image to add
     // TODO: generalize to banners pulled from...Parse?
     UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
+    //if(_bannerToAdd != NULL) {
+        banner = _bannerToAdd;
+    //}
+    
+    _imageView.image = banner;
     
     // TODO: fix scaling hack
     // Scale banner to screen width
     UIImage *scaledImage =
     [UIImage imageWithCGImage:[banner CGImage]
-                        scale:(banner.scale * 1/3.0)
+                        scale:(banner.scale * 1/8.0)
                   orientation:(banner.imageOrientation)];
     
     UIGraphicsBeginImageContext(img1.size);
@@ -178,7 +189,6 @@
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     _imageView.image = resultingImage;
-    //return resultingImage;
 }
 
 #pragma mark -
