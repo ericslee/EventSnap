@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import <MobileCoreServices/MobileCoreServices.h>
+#import <Parse/Parse.h>
+
 
 @interface SharePhotoViewController : UIViewController
 @property (strong, nonatomic) IBOutlet UITextField *postText;
+@property (strong, nonatomic) PFObject *eventObject;
 - (IBAction)postPhoto:(id)sender;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "SharePhotoViewController.h"
+#import "AppDelegate.h"
 
 @interface SharePhotoViewController ()
 
@@ -26,6 +27,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    self.eventObject = appDelegate.currentEventObject;
+    _postText.text = self.eventObject[@"event_hashtags"];
+    
+    
 	// Do any additional setup after loading the view.
 }
 

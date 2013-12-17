@@ -12,5 +12,6 @@
 @interface PhotoStreamViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) NSString *photoObjectID;
 
 @end
