@@ -66,9 +66,9 @@
     }
     
     // HARDCODED KITTY PICTURE PLACEHOLDER
-    _banners = [[NSMutableArray alloc] init];
-    [_banners addObject:[UIImage imageNamed:@"thumbnail"]];
-    NSLog(@"Number of banners: %d", [_banners count]);
+    //_banners = [[NSMutableArray alloc] init];
+    //[_banners addObject:[UIImage imageNamed:@"thumbnail"]];
+    //NSLog(@"Number of banners: %d", [_banners count]);
     
     /*
      _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
@@ -112,6 +112,12 @@
     return cell;
 }
 
+// perform action when a cell is selected
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    _bannerToAdd = _banners[indexPath.row];
+    [self addBanner:self];
+}
 
 // Change to camera
 - (void) useCamera:(id)sender
@@ -163,22 +169,34 @@
     UIImage *img1 = _imageView.image;
     // Get reference to banner image to add
     // TODO: generalize to banners pulled from...Parse?
-    UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
+    //UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
+    //if(_bannerToAdd != NULL) {
+    UIImage *banner = _bannerToAdd;
+    //}
+    
+    _imageView.image = banner;
     
     // TODO: fix scaling hack
     // Scale banner to screen width
+    /*
     UIImage *scaledImage =
     [UIImage imageWithCGImage:[banner CGImage]
-                        scale:(banner.scale * 1/3.0)
+                        scale:(banner.scale * 1/8.0)
+                  orientation:(banner.imageOrientation)];
+     */
+    UIImage *scaledImage =
+    [UIImage imageWithCGImage:[banner CGImage]
+                        scale:(banner.scale)
                   orientation:(banner.imageOrientation)];
     
     UIGraphicsBeginImageContext(img1.size);
     [img1 drawAtPoint:CGPointMake(0, 0)];
-    [scaledImage drawAtPoint:CGPointMake(325, 2500)];
+    
+    // y coordinate found through trial and error...
+    [scaledImage drawAtPoint:CGPointMake(0, 400)];
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     _imageView.image = resultingImage;
-    //return resultingImage;
 }
 
 #pragma mark -

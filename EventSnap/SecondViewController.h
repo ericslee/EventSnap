@@ -25,6 +25,7 @@ UINavigationControllerDelegate> {
 @property (strong, nonatomic) NSMutableArray *banners;
 @property (strong, nonatomic) PFObject *eventObject;
 @property (nonatomic) id delegate;
+@property (strong, nonatomic) UIImage *bannerToAdd;
 
 
 
@@ -32,5 +33,5 @@ UINavigationControllerDelegate> {
 - (IBAction)useCameraRoll:(id)sender;
 - (IBAction)addBanner:(id)sender;
 - (IBAction)saveImage:(id)sender;
-
+- (IBAction)setBanner:(id)sender;
 @end

@@ -685,6 +685,77 @@
             </objects>
             <point key="canvasLocation" x="2011" y="-711"/>
         </scene>
+        <!--Edit Banner View Controller-->
+        <scene sceneID="0ic-09-KOd">
+            <objects>
+                <viewController storyboardIdentifier="editBanners" id="2Nd-yY-BXp" customClass="EditBannerViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="R1f-Uh-Yec"/>
+                        <viewControllerLayoutGuide type="bottom" id="QaI-lK-rpL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Vmq-jK-DY2" customClass="EditEventPhotos">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-mi-Yvv">
+                                <rect key="frame" x="203" y="393" width="111" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Upload to Event">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="xxb-06-NE2"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gUk-LC-RvG">
+                                <rect key="frame" x="-3" y="20" width="326" height="361"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glW-Mq-nhL">
+                                <rect key="frame" x="20" y="393" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add Banner">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="mWv-3i-90e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPr-Za-p3e">
+                                <rect key="frame" x="20" y="431" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Red">
+                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeToRedBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="BZt-Yc-ofN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fED-QH-Gbo">
+                                <rect key="frame" x="20" y="469" width="31" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Blue">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="changeToBlueBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="mBx-FO-IYW"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="HEQ-Le-5ge"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="gUk-LC-RvG" id="dCn-hh-0LW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yw6-NS-nN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2496" y="-681"/>
+        </scene>
         <!--Login-->
         <scene sceneID="CTx-NR-UQM">
             <objects>
@@ -862,6 +933,7 @@
                         <outlet property="eventLocation" destination="ON4-Dg-D5V" id="IPZ-g9-bCv"/>
                         <outlet property="eventTitle" destination="Ct2-eI-mS5" id="9hZ-bX-Z2x"/>
                         <segue destination="vZf-GH-Q4T" kind="push" identifier="editEventInfo" id="rrJ-ST-wBx"/>
+                        <segue destination="2Nd-yY-BXp" kind="push" identifier="editBanners" id="amj-Al-oHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7hO-FG-w5s" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -965,6 +1037,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="c1B-bz-9oC"/>
+        <segue reference="FlZ-mH-V0R"/>
     </inferredMetricsTieBreakers>
 </document>

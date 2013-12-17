@@ -18,5 +18,6 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 - (IBAction)editEventInformation:(id)sender;
+- (IBAction)editBanners:(id)sender;
 
 @end

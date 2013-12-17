@@ -20,6 +20,7 @@
 		110110BF183098EC00364860 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1101109B183098EC00364860 /* Foundation.framework */; };
 		110110C0183098EC00364860 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1101109F183098EC00364860 /* UIKit.framework */; };
 		110110C8183098EC00364860 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 110110C6183098EC00364860 /* InfoPlist.strings */; };
+		1112E26F185EC33B0052B2E4 /* EditBannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1112E26E185EC33B0052B2E4 /* EditBannerViewController.m */; };
 		111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 111B7DC51842EFD600A9CF91 /* InitialViewController.m */; };
 		11374FC9184F71F300BD1853 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FC8184F71F300BD1853 /* SWRevealViewController.m */; };
 		11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11374FCB184F86FF00BD1853 /* SharePhotoViewController.m */; };
@@ -83,6 +84,8 @@
 		110110C5183098EC00364860 /* EventSnapTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EventSnapTests-Info.plist"; sourceTree = "<group>"; };
 		110110C7183098EC00364860 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		110110C9183098EC00364860 /* EventSnapTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EventSnapTests.m; sourceTree = "<group>"; };
+		1112E26D185EC33B0052B2E4 /* EditBannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditBannerViewController.h; sourceTree = "<group>"; };
+		1112E26E185EC33B0052B2E4 /* EditBannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditBannerViewController.m; sourceTree = "<group>"; };
 		111B7DC41842EFD600A9CF91 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		111B7DC51842EFD600A9CF91 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
 		11374FC7184F71F200BD1853 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SWRevealViewController.h; path = ../SWRevealViewController.h; sourceTree = "<group>"; };
@@ -211,6 +214,8 @@
 				57E55F91185BFCD3006F686F /* MBProgressHUD.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
 				57E55F96185CFD69006F686F /* Main35.storyboard */,
+				11B82C181858C065008BFCE5 /* BannerCollectionViewCell.h */,
+				11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */,
 				5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */,
 				5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */,
 				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
@@ -223,6 +228,8 @@
 				11F68E021844B7C1006118F9 /* LoginViewController.m */,
 				57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */,
 				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
+				1112E26D185EC33B0052B2E4 /* EditBannerViewController.h */,
+				1112E26E185EC33B0052B2E4 /* EditBannerViewController.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
 				111B7DC51842EFD600A9CF91 /* InitialViewController.m */,
 				57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */,
@@ -231,8 +238,6 @@
 				57285F23184F0EDB00CBBA43 /* EventsListViewController.m */,
 				110110B0183098EC00364860 /* FirstViewController.h */,
 				110110B1183098EC00364860 /* FirstViewController.m */,
-				11B82C181858C065008BFCE5 /* BannerCollectionViewCell.h */,
-				11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */,
 				118B1E0218568B0500865676 /* PhotoStreamViewCell.h */,
 				118B1E0318568B0500865676 /* PhotoStreamViewCell.m */,
 				118B1DFF18567BE500865676 /* PhotoStreamViewController.h */,
@@ -390,6 +395,7 @@
 				111B7DC61842EFD600A9CF91 /* InitialViewController.m in Sources */,
 				57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */,
 				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,
+				1112E26F185EC33B0052B2E4 /* EditBannerViewController.m in Sources */,
 				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
 				57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
