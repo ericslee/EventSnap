@@ -13,6 +13,7 @@
 
 @property IBOutlet UILabel *titleLabel;
 @property IBOutlet UILabel *dateLabel;
+@property IBOutlet UILabel *locationLabel;
 @property (nonatomic, retain) IBOutlet UIImageView *imgView;
 
 @property (nonatomic, strong) PFObject *eventObject;

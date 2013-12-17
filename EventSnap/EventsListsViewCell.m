@@ -15,12 +15,15 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.font = [UIFont fontWithName:@"Noteworthy" size:22.0];
+        _titleLabel.font = [UIFont fontWithName:@"Noteworthy" size:15.0];
         _dateLabel = [[UILabel alloc]init];
         _dateLabel.font = [UIFont fontWithName:@"Noteworthy" size:12.0];
+        _locationLabel = [[UILabel alloc]init];
+        _locationLabel.font = [UIFont fontWithName:@"Noteworthy" size:10.0];
         _imgView = [[UIImageView alloc]init];
         [self.contentView addSubview:_titleLabel];
         [self.contentView addSubview:_dateLabel];
+        [self.contentView addSubview:_locationLabel];
         [self.contentView addSubview:_imgView];
     }
     return self;
@@ -34,11 +37,14 @@
     frame= CGRectMake(boundsX+10 ,0, 60, 60);
     _imgView.frame = frame;
     
-    frame= CGRectMake(boundsX+90 ,15, 200, 25);
+    frame= CGRectMake(boundsX+90 ,10, 200, 25);
     _titleLabel.frame = frame;
     
-    frame= CGRectMake(boundsX+90 ,50, 200, 15);
+    frame= CGRectMake(boundsX+90 ,34, 200, 15);
     _dateLabel.frame = frame;
+    
+    frame= CGRectMake(boundsX+90 ,36, 200, 45);
+    _locationLabel.frame = frame;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated

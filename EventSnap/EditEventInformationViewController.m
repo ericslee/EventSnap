@@ -71,8 +71,7 @@
 - (void)startPickerChanged:(id)sender{
     _startDate = [sender date];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
-    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+    [timeFormatter setDateStyle:NSDateFormatterLongStyle];
     NSString *newTime = [timeFormatter stringFromDate:[[sender date]init] ];
     startDateField.text = newTime;
     // NSLog(@"value: %@", [sender date]);
@@ -81,8 +80,7 @@
 - (void)endPickerChanged:(id)sender{
     _endDate = [sender date];
     NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
-    [timeFormatter setDateFormat:@"MM/dd/yyyy HH:mm:ss"];
-    [timeFormatter setTimeZone:[NSTimeZone timeZoneWithName:@"EST"]];
+    [timeFormatter setDateStyle:NSDateFormatterLongStyle];
     NSString *newTime = [timeFormatter stringFromDate:[[sender date]init] ];
     endDateField.text = newTime;
     // NSLog(@"value: %@", [sender date]);

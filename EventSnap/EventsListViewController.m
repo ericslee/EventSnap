@@ -148,18 +148,16 @@
         cell = [[EventsListsViewCell alloc] init];
     }
     
-    // Configure the cell to show todo item with a priority at the bottom
-    //cell.textLabel.text = object[@"event_name"];
-    cell.titleLabel.text = object[@"event_name"];
-    //UIView *viewSelected = [[UIView alloc] init];
-    //viewSelected.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
-    //cell.selectedBackgroundView = viewSelected;
-    //cell.backgroundView = viewSelected;
+       cell.titleLabel.text = object[@"event_name"];
+    
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
-    NSString *convertedDate = [dateFormatter stringFromDate:object[@"event_start_date"]];
-    //cell.detailTextLabel.text = convertedDate;
-    cell.dateLabel.text = convertedDate;
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    NSString *convertedStartDate = [dateFormatter stringFromDate:object[@"event_start_date"]];
+    NSString *convertedEndDate = [dateFormatter stringFromDate:object[@"event_end_date"]];
+    cell.dateLabel.text = [[convertedStartDate stringByAppendingString:@" - "] stringByAppendingString:convertedEndDate];
+    
+    cell.locationLabel.text = object[@"event_location"];
+    
     NSArray *eventPics = object[@"event_pictures"];
     PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
     if (eventPics.count != 0) {

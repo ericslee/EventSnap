@@ -53,7 +53,7 @@
         _photoStreamIDs = eventIds;
     }
     
-    NSDate *todaysDate = [[NSDate alloc] initWithTimeIntervalSinceNow:100000];
+    NSDate *todaysDate = [[NSDate alloc] init];
     
     
     NSComparisonResult result = [todaysDate compare:self.eventObject[@"event_end_date"]];
