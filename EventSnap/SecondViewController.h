@@ -19,6 +19,7 @@ UINavigationControllerDelegate> {
 
 
 @property BOOL newMedia;
+@property BOOL hasBanner;
 @property (strong, nonatomic) IBOutlet UIImageView *imageView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *sidebarButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *bannerImages;
@@ -26,7 +27,7 @@ UINavigationControllerDelegate> {
 @property (strong, nonatomic) PFObject *eventObject;
 @property (nonatomic) id delegate;
 @property (strong, nonatomic) UIImage *bannerToAdd;
-
+@property (strong, nonatomic) UIImagePickerController *imagePicker;
 
 
 - (IBAction)useCamera:(id)sender;
