@@ -29,6 +29,8 @@
 		118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0018567BF500865676 /* PhotoStreamViewController.m */; };
 		118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0318568B0500865676 /* PhotoStreamViewCell.m */; };
 		118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */; };
+		11A0E8D418603CD0003D5302 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E8D318603CD0003D5302 /* ISColorWheel.m */; };
+		11A0E8D718603CFD003D5302 /* ColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E8D618603CFD003D5302 /* ColorPickerViewController.m */; };
 		11B82C1A1858C065008BFCE5 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */; };
 		57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		57285F29184F85A200CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
@@ -99,6 +101,10 @@
 		118B1E0318568B0500865676 /* PhotoStreamViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewCell.m; sourceTree = "<group>"; };
 		118B1E0518568FF700865676 /* PhotoStreamImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamImageViewController.h; sourceTree = "<group>"; };
 		118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamImageViewController.m; sourceTree = "<group>"; };
+		11A0E8D218603CD0003D5302 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
+		11A0E8D318603CD0003D5302 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
+		11A0E8D518603CFD003D5302 /* ColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorPickerViewController.h; sourceTree = "<group>"; };
+		11A0E8D618603CFD003D5302 /* ColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ColorPickerViewController.m; sourceTree = "<group>"; };
 		11B82C181858C065008BFCE5 /* BannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCollectionViewCell.h; sourceTree = "<group>"; };
 		11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewCell.m; sourceTree = "<group>"; };
 		11F68E011844B7C1006118F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -233,6 +239,10 @@
 				57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */,
 				1112E26D185EC33B0052B2E4 /* EditBannerViewController.h */,
 				1112E26E185EC33B0052B2E4 /* EditBannerViewController.m */,
+				11A0E8D518603CFD003D5302 /* ColorPickerViewController.h */,
+				11A0E8D618603CFD003D5302 /* ColorPickerViewController.m */,
+				11A0E8D218603CD0003D5302 /* ISColorWheel.h */,
+				11A0E8D318603CD0003D5302 /* ISColorWheel.m */,
 				111B7DC41842EFD600A9CF91 /* InitialViewController.h */,
 				111B7DC51842EFD600A9CF91 /* InitialViewController.m */,
 				57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */,
@@ -393,6 +403,7 @@
 				118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */,
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,
+				11A0E8D718603CFD003D5302 /* ColorPickerViewController.m in Sources */,
 				57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */,
 				110110B2183098EC00364860 /* FirstViewController.m in Sources */,
 				57D1A14718565CA500F7AB8C /* EditEventInformationViewController.m in Sources */,
@@ -403,6 +414,7 @@
 				118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */,
 				1112E26F185EC33B0052B2E4 /* EditBannerViewController.m in Sources */,
 				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
+				11A0E8D418603CD0003D5302 /* ISColorWheel.m in Sources */,
 				57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
 				118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */,

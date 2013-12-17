@@ -711,7 +711,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sPn-mi-Yvv">
-                                <rect key="frame" x="203" y="393" width="111" height="30"/>
+                                <rect key="frame" x="13" y="444" width="111" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                 <state key="normal" title="Upload to Event">
@@ -726,38 +726,14 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="glW-Mq-nhL">
-                                <rect key="frame" x="20" y="393" width="82" height="30"/>
+                                <rect key="frame" x="26" y="393" width="85" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" title="Add Banner">
+                                <state key="normal" title="Update Banner">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="addBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="mWv-3i-90e"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPr-Za-p3e">
-                                <rect key="frame" x="20" y="431" width="30" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" title="Red">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeToRedBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="BZt-Yc-ofN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fED-QH-Gbo">
-                                <rect key="frame" x="20" y="469" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
-                                <state key="normal" title="Blue">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeToBlueBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="mBx-FO-IYW"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.79999999999999982" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter in your text for the banner here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="shP-Qx-RRV">
@@ -773,13 +749,27 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4UB-CF-K73">
-                                <rect key="frame" x="229" y="433" width="71" height="30"/>
+                                <rect key="frame" x="229" y="393" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="15"/>
                                 <state key="normal" title="Pick Color">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="pickColor:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="o2q-aa-v6X"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mfg-C4-9Dm">
+                                <rect key="frame" x="229" y="431" width="71" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                            </view>
+                            <view alpha="0.69999999999999973" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0hM-C5-SJ1">
+                                <rect key="frame" x="-9" y="382" width="400" height="4"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.82589413160000003" green="0.93676892990000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -788,18 +778,20 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="bannerText" destination="shP-Qx-RRV" id="nbC-vJ-Evp"/>
+                        <outlet property="colorPreview" destination="mfg-C4-9Dm" id="ew8-kk-NFX"/>
                         <outlet property="imageView" destination="gUk-LC-RvG" id="dCn-hh-0LW"/>
-                        <segue destination="6RG-4o-cYu" kind="push" id="F7h-oU-VGl"/>
+                        <segue destination="6RG-4o-cYu" kind="push" identifier="colorPicker" id="F7h-oU-VGl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yw6-NS-nN6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OIx-Pz-DAe"/>
             </objects>
             <point key="canvasLocation" x="2496" y="-681"/>
         </scene>
-        <!--View Controller-->
+        <!--Color Picker View Controller-->
         <scene sceneID="ngD-mT-U2O">
             <objects>
-                <viewController id="6RG-4o-cYu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="colorPicker" id="6RG-4o-cYu" customClass="ColorPickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Pl-iF-aiS"/>
                         <viewControllerLayoutGuide type="bottom" id="e3F-R9-4WU"/>
@@ -807,7 +799,7 @@
                     <view key="view" contentMode="scaleToFill" id="D2c-fT-Wlo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.82589413160000003" green="0.93676892990000005" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="q4d-hM-ZdT"/>
                 </viewController>
