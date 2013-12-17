@@ -29,6 +29,7 @@
 		118B1E0118567BF500865676 /* PhotoStreamViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0018567BF500865676 /* PhotoStreamViewController.m */; };
 		118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0318568B0500865676 /* PhotoStreamViewCell.m */; };
 		118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */; };
+		11A0E8D118602CF6003D5302 /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11A0E8D018602CF6003D5302 /* ISColorWheel.m */; };
 		11B82C1A1858C065008BFCE5 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */; };
 		57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		57285F29184F85A200CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
@@ -98,6 +99,8 @@
 		118B1E0318568B0500865676 /* PhotoStreamViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamViewCell.m; sourceTree = "<group>"; };
 		118B1E0518568FF700865676 /* PhotoStreamImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoStreamImageViewController.h; sourceTree = "<group>"; };
 		118B1E0618568FF700865676 /* PhotoStreamImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoStreamImageViewController.m; sourceTree = "<group>"; };
+		11A0E8CF18602CF5003D5302 /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
+		11A0E8D018602CF6003D5302 /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
 		11B82C181858C065008BFCE5 /* BannerCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BannerCollectionViewCell.h; sourceTree = "<group>"; };
 		11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BannerCollectionViewCell.m; sourceTree = "<group>"; };
 		11F68E011844B7C1006118F9 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				57E55F96185CFD69006F686F /* Main35.storyboard */,
 				11B82C181858C065008BFCE5 /* BannerCollectionViewCell.h */,
 				11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */,
+				11A0E8CF18602CF5003D5302 /* ISColorWheel.h */,
+				11A0E8D018602CF6003D5302 /* ISColorWheel.m */,
 				5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */,
 				5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */,
 				57D1A14518565CA500F7AB8C /* EditEventInformationViewController.h */,
@@ -402,6 +407,7 @@
 				118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */,
 				11B82C1A1858C065008BFCE5 /* BannerCollectionViewCell.m in Sources */,
 				11374FCC184F86FF00BD1853 /* SharePhotoViewController.m in Sources */,
+				11A0E8D118602CF6003D5302 /* ISColorWheel.m in Sources */,
 				11374FD8184F940B00BD1853 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
