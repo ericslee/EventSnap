@@ -41,14 +41,18 @@
 	// Do any additional setup after loading the view.
     self.eventTitle.text = self.eventObject[@"event_name"];
     self.eventLocation.text = self.eventObject[@"event_location"];
-    self.eventDate.text = [NSString stringWithFormat:@"%@",
-                           self.eventObject[@"event_start_date"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    NSString *convertedStartDate = [dateFormatter stringFromDate:self.eventObject[@"event_start_date"]];
+    NSString *convertedEndDate = [dateFormatter stringFromDate:self.eventObject[@"event_end_date"]];
+    self.eventDate.text = [[convertedStartDate stringByAppendingString:@" - "] stringByAppendingString:convertedEndDate];
     
     // Set up event images
     _collectionView.delegate = self;
     
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
     NSMutableArray *eventPictures = [NSMutableArray array];
+    NSMutableArray *eventIds = [NSMutableArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
     if (eventPointers.count != 0) {
         for (int i = 0; i < eventPointers.count; i++){
@@ -57,10 +61,15 @@
             PFFile *file = picObj[@"image"];
             NSData *data = [file getData];
             UIImage *eventImage = [UIImage imageWithData:data];
-            [eventPictures addObject:eventImage];
+            if (!(eventImage == nil)){
+                [eventPictures addObject:eventImage];
+            }
+            [eventIds addObject:eventPic.objectId];
+
             
         }
         _photoStreamImages = eventPictures;
+        _photoStreamIDs = eventIds;
     }
 }
 
@@ -120,6 +129,8 @@
         
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
         vc.image = _photoStreamImages[indexPath.row];
+        vc.imageID = _photoStreamIDs[indexPath.row];
+        vc.eventObject = self.eventObject;
     }
     //[self queryForTable];
     

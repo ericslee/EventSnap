@@ -133,8 +133,11 @@
      
     // Configure the cell to show item
     cell.textLabel.text = object[@"event_name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",
-                                 object[@"event_start_date"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *convertedDate = [dateFormatter stringFromDate:object[@"event_start_date"]];
+    cell.detailTextLabel.text = convertedDate;
+
     
     return cell;
 }

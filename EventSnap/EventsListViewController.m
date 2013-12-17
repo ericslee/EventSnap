@@ -112,12 +112,13 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
+    NSDate *todaysDate = [[NSDate alloc] initWithTimeIntervalSinceNow:10000];
     [query orderByDescending:@"createdAt"];
+    //[query whereKey:@"event_start_date" greaterThan:todaysDate];
     
     return query;
 }
-
-- (UITableViewCell *)tableView:(UITableView *)tableView
+;- (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath
                         object:(PFObject *)object
 {
@@ -131,8 +132,10 @@
     
     // Configure the cell to show todo item with a priority at the bottom
     cell.textLabel.text = object[@"event_name"];
-    cell.detailTextLabel.text = [NSString stringWithFormat:@"Date: %@",
-                                 object[@"event_start_date"]];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *convertedDate = [dateFormatter stringFromDate:object[@"event_start_date"]];
+    cell.detailTextLabel.text = convertedDate;
     
     return cell;
 }

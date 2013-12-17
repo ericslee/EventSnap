@@ -228,6 +228,17 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
 
 -(void)saveImage:(id)sender {
     
+    if (_imageView.image == NULL){
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle: @"Save failed"
+                              message: @"No Image Selected"
+                              delegate: nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+        [alert show];
+    }
+    else {
+    
     NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
     
     PFFile *file = [PFFile fileWithName:@"img" data:pictureData];
@@ -279,9 +290,10 @@ didFinishPickingMediaWithInfo:(NSDictionary *)info
     } progressBlock:^(int percentDone) {
         HUD.progress = (float)percentDone/100;
     }];
+    }
 }
 
-    
+
 -(void)image:(UIImage *)image
 finishedSavingWithError:(NSError *)error
  contextInfo:(void *)contextInfo

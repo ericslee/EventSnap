@@ -33,19 +33,40 @@
 	// Do any additional setup after loading the view.
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
     eventPictures = [NSMutableArray array];
+    NSMutableArray *eventIds = [NSMutableArray array];
     PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
     if (eventPointers.count != 0) {
         for (int i = 0; i < eventPointers.count; i++){
             PFObject *eventPic = [eventPointers objectAtIndex:i];
             PFObject *picObj = [query getObjectWithId:eventPic.objectId];
             PFFile *file = picObj[@"image"];
+            [eventIds addObject:eventPic.objectId];
             NSData *data = [file getData];
             UIImage *eventImage = [UIImage imageWithData:data];
-            [eventPictures addObject:eventImage];
-        
+            if (!(eventImage ==  nil)){
+                [eventPictures addObject:eventImage];
+            }
+            
         }
         _photoStreamImages = eventPictures;
+        _photoStreamIDs = eventIds;
     }
+    
+    NSDate *todaysDate = [[NSDate alloc] initWithTimeIntervalSinceNow:100000];
+    
+    
+    NSComparisonResult result = [todaysDate compare:self.eventObject[@"event_end_date"]];
+    
+    if (result == NSOrderedDescending){
+        addPhotoLabel.hidden = TRUE;
+        NSLog(@"hidden true");
+    }
+    else {
+        addPhotoLabel.hidden = FALSE;
+        NSLog(@"hidden false");
+    }
+    
+    //[query whereKey:@"event_start_date" greaterThan:todaysDate];
     
     /*
     // create a UIRefreshControl for reloading the data in the stream with new images
@@ -102,6 +123,7 @@
     
     if ([_photoStreamImages count] != 0) {
         cell.imageView.image = _photoStreamImages[indexPath.row];
+        cell.photoObjectID = _photoStreamIDs[indexPath.row];
     }
     
     return cell;
@@ -115,6 +137,8 @@
         
         PhotoStreamImageViewController *vc = (PhotoStreamImageViewController *)[segue destinationViewController];
         vc.image = _photoStreamImages[indexPath.row];
+        vc.imageID = _photoStreamIDs[indexPath.row];
+        vc.eventObject = self.eventObject;
     }
     [self queryForTable];
 
@@ -143,6 +167,7 @@
             PFObject *eventPic = [eventPointers objectAtIndex:i];
             PFObject *picObj = [query getObjectWithId:eventPic.objectId];
             PFFile *file = picObj[@"image"];
+            [_photoStreamIDs addObject:eventPic.objectId];
             //NSData *data = [file getData];
             //UIImage *eventImage = [UIImage imageWithData:data];
             //[eventPictures addObject:eventImage];

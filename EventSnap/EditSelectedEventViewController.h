@@ -14,6 +14,7 @@
 
 @property (nonatomic, strong) PFObject *eventObject;
 @property (strong, nonatomic) NSMutableArray *photoStreamImages;
+@property (strong, nonatomic) NSMutableArray *photoStreamIDs;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 - (IBAction)editEventInformation:(id)sender;

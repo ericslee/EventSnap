@@ -7,10 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface PhotoStreamImageViewController : UIViewController
+@interface PhotoStreamImageViewController : UIViewController {
+    IBOutlet UIButton *deletePhoto;
+}
 
 @property (strong,nonatomic) IBOutlet UIImageView *imageView;
 @property (strong,nonatomic) UIImage *image;
+@property (strong, nonatomic) NSString *imageID;
+@property (strong, nonatomic) PFObject *eventObject;
+-(IBAction)deletePhoto:(id)sender;
 
 @end
