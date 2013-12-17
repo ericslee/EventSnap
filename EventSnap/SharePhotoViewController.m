@@ -27,9 +27,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     self.eventObject = appDelegate.currentEventObject;
     _postText.text = self.eventObject[@"event_hashtags"];
+    socialBalloon.image = [UIImage imageNamed:@"social_balloon"];
+    
     
     
 	// Do any additional setup after loading the view.

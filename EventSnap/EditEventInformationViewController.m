@@ -30,7 +30,8 @@
     //UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self.view action:@selector(resignKeyboard:)];
     //[self.view addGestureRecognizer:tap];
     [self setupKeyboard];
-    
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
+
     UIDatePicker *startDatePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0,0,320,200)];
     [startDatePicker addTarget:self
                         action:@selector(startPickerChanged:)

@@ -12,10 +12,17 @@
 #import "EventsListViewController.h"
 
 
-@interface InitialViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate>
+@interface InitialViewController : UIViewController <PFLogInViewControllerDelegate, PFSignUpViewControllerDelegate> {
+    IBOutlet UILabel *eventOrganizerLabel;
+    IBOutlet UIButton *editEventButton;
+    IBOutlet UIButton *logIn;
+    IBOutlet UIButton *logOut;
+    
+}
 
 - (IBAction)searchEvents:(id)sender;
 - (IBAction)loginView:(id)sender;
+- (IBAction)logOutView:(id)sender;
 - (IBAction)editEventLabel:(id)sender;
 //- (IBAction)viewAllEvents:(id)sender;
 

@@ -39,6 +39,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
     self.eventTitle.text = self.eventObject[@"event_name"];
     self.eventLocation.text = self.eventObject[@"event_location"];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];

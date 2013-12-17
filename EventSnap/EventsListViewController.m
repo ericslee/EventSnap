@@ -10,6 +10,7 @@
 #import "Parse/Parse.h"
 #import "EventsListViewController.h"
 #import "PhotoStreamViewController.h"
+#import "EventsListsViewCell.h"
 
 @interface EventsListViewController ()
 
@@ -52,6 +53,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -102,6 +104,19 @@
     // This method is called every time objects are loaded from Parse via the PFQuery
 }
 
+- (UIImage *)imageWithImage:(UIImage *)image convertToSize:(CGSize)size {
+    UIGraphicsBeginImageContext(size);
+    [image drawInRect:CGRectMake(0, 0, size.width, size.height)];
+    UIImage *destImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return destImage;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 75;
+}
+
 
 - (PFQuery *)queryForTable {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
@@ -112,8 +127,8 @@
         query.cachePolicy = kPFCachePolicyCacheThenNetwork;
     }
     
-    NSDate *todaysDate = [[NSDate alloc] initWithTimeIntervalSinceNow:10000];
-    [query orderByDescending:@"createdAt"];
+    //NSDate *todaysDate = [[NSDate alloc] initWithTimeIntervalSinceNow:10000];
+    [query orderByDescending:@"event_start_date"];
     //[query whereKey:@"event_start_date" greaterThan:todaysDate];
     
     return query;
@@ -124,18 +139,41 @@
 {
     static NSString *cellIdentifier = @"Cell";
     
-    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    EventsListsViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    
     if (!cell) {
-        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
-                                      reuseIdentifier:cellIdentifier];
+        //cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      //reuseIdentifier:cellIdentifier];
+        cell = [[EventsListsViewCell alloc] init];
     }
     
     // Configure the cell to show todo item with a priority at the bottom
-    cell.textLabel.text = object[@"event_name"];
+    //cell.textLabel.text = object[@"event_name"];
+    cell.titleLabel.text = object[@"event_name"];
+    //UIView *viewSelected = [[UIView alloc] init];
+    //viewSelected.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
+    //cell.selectedBackgroundView = viewSelected;
+    //cell.backgroundView = viewSelected;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateStyle:NSDateFormatterLongStyle];
     NSString *convertedDate = [dateFormatter stringFromDate:object[@"event_start_date"]];
-    cell.detailTextLabel.text = convertedDate;
+    //cell.detailTextLabel.text = convertedDate;
+    cell.dateLabel.text = convertedDate;
+    NSArray *eventPics = object[@"event_pictures"];
+    PFQuery *query = [PFQuery queryWithClassName:@"ImageObject"];
+    if (eventPics.count != 0) {
+        PFObject *eventPic = [eventPics objectAtIndex:0];
+        PFObject *picObj = [query getObjectWithId:eventPic.objectId];
+        PFFile *file = picObj[@"image"];
+        NSData *data = [file getData];
+        UIImage *eventImage = [UIImage imageWithData:data];
+        cell.imageView.image = [self imageWithImage:eventImage convertToSize:CGSizeMake(60,60)];
+    }
+    else {
+        UIImage *tempImage = [UIImage imageNamed:@"imagePlaceholder"];
+        cell.imageView.image = [self imageWithImage:tempImage convertToSize:CGSizeMake(60,60)];
+    }
     
     return cell;
 }

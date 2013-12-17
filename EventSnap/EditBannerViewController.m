@@ -26,6 +26,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
+
 	// Do any additional setup after loading the view.
     
     // Set the background image of the banner as transparent (very tiny image file size)

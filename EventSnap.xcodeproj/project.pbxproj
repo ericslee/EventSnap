@@ -33,6 +33,7 @@
 		11B82C1A1858C065008BFCE5 /* BannerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B82C191858C065008BFCE5 /* BannerCollectionViewCell.m */; };
 		57285F24184F0EDB00CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
 		57285F29184F85A200CBBA43 /* EventsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F23184F0EDB00CBBA43 /* EventsListViewController.m */; };
+		57444AD618601DEA00D4DA05 /* EventsListsViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57444AD518601DEA00D4DA05 /* EventsListsViewCell.m */; };
 		5750E9A4183C5A7500345D27 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A3183C5A7500345D27 /* Parse.framework */; };
 		5750E9A6183C5A9300345D27 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A5183C5A9300345D27 /* AudioToolbox.framework */; };
 		5750E9A8183C5A9800345D27 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9A7183C5A9800345D27 /* CFNetwork.framework */; };
@@ -109,6 +110,8 @@
 		57285F23184F0EDB00CBBA43 /* EventsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListViewController.m; sourceTree = "<group>"; };
 		57285F2B184F881800CBBA43 /* EventOrganizersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventOrganizersViewController.h; sourceTree = "<group>"; };
 		57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventOrganizersViewController.m; sourceTree = "<group>"; };
+		57444AD418601DEA00D4DA05 /* EventsListsViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EventsListsViewCell.h; sourceTree = "<group>"; };
+		57444AD518601DEA00D4DA05 /* EventsListsViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EventsListsViewCell.m; sourceTree = "<group>"; };
 		5750E9A3183C5A7500345D27 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		5750E9A5183C5A9300345D27 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5750E9A7183C5A9800345D27 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -241,6 +244,8 @@
 				57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */,
 				57285F22184F0EDB00CBBA43 /* EventsListViewController.h */,
 				57285F23184F0EDB00CBBA43 /* EventsListViewController.m */,
+				57444AD418601DEA00D4DA05 /* EventsListsViewCell.h */,
+				57444AD518601DEA00D4DA05 /* EventsListsViewCell.m */,
 				110110B0183098EC00364860 /* FirstViewController.h */,
 				110110B1183098EC00364860 /* FirstViewController.m */,
 				118B1E0218568B0500865676 /* PhotoStreamViewCell.h */,
@@ -389,6 +394,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				57BC2CC3185695AA003D8B54 /* EventOrganizersViewController.m in Sources */,
+				57444AD618601DEA00D4DA05 /* EventsListsViewCell.m in Sources */,
 				118B1E0718568FF700865676 /* PhotoStreamImageViewController.m in Sources */,
 				110110B5183098EC00364860 /* SecondViewController.m in Sources */,
 				110110AC183098EC00364860 /* AppDelegate.m in Sources */,

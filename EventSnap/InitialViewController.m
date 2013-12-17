@@ -12,7 +12,10 @@
 
 @interface InitialViewController ()
 
+@property (nonatomic, strong) IBOutlet UILabel *eventOrganizerLabel;
 @property (nonatomic, strong) IBOutlet UIButton *editEventButton;
+@property (nonatomic, strong) IBOutlet UIButton *logIn;
+@property (nonatomic, strong) IBOutlet UIButton *logOut;
 
 @end
 
@@ -33,9 +36,15 @@
 	// Do any additional setup after loading the view.
     if (![PFUser currentUser]){
         _editEventButton.hidden = true;
+        _logIn.hidden = false;
+        _logOut.hidden = true;
+        _eventOrganizerLabel.hidden = false;
     }
     else {
         _editEventButton.hidden = false;
+        _logIn.hidden = true;
+        _logOut.hidden = false;
+        _eventOrganizerLabel.hidden = true;
     }
     UIGraphicsBeginImageContext(self.view.frame.size);
     [[UIImage imageNamed:@"mainPageBackground"] drawInRect:self.view.bounds];
@@ -61,40 +70,44 @@
     [self performSegueWithIdentifier:@"OrganizerSignedIn" sender:self];
 }
 
-- (IBAction)loginView:(id)sender
-{
-            // No user logged in
-            // Create the log in view controller
-    
+- (IBAction)logOutView:(id)sender {
     if([PFUser currentUser]) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Logged in" message:@"logged in" delegate:nil cancelButtonTitle:@"log me out" otherButtonTitles:nil, nil];
-        [alert show];
-        //[alert release];
         [PFUser logOut];
     }
+    _editEventButton.hidden = false;
+    _logIn.hidden = true;
+    _logOut.hidden = false;
+    _eventOrganizerLabel.hidden = true;
     
-            PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
-            [logInViewController setDelegate:self]; // Set ourselves as the delegate
+}
+
+- (IBAction)loginView:(id)sender
+{
+    
+    PFLogInViewController *logInViewController = [[PFLogInViewController alloc] init];
+    [logInViewController setDelegate:self]; // Set ourselves as the delegate
             
-            // Create the sign up view controller
-            PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
-            [signUpViewController setDelegate:self]; // Set ourselves as the delegate
+    // Create the sign up view controller
+    PFSignUpViewController *signUpViewController = [[PFSignUpViewController alloc] init];
+    [signUpViewController setDelegate:self]; // Set ourselves as the delegate
             
-            // Assign our sign up controller to be displayed from the login controller
-            [logInViewController setSignUpController:signUpViewController];
+    // Assign our sign up controller to be displayed from the login controller
+    [logInViewController setSignUpController:signUpViewController];
             
-            // Present the log in view controller
-            [self presentViewController:logInViewController animated:YES completion:NULL];
+    // Present the log in view controller
+    [self presentViewController:logInViewController animated:YES completion:NULL];
     logInViewController.delegate = self;
     logInViewController.signUpController.delegate = self;
-    }
+}
 
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     [self dismissViewControllerAnimated:YES completion:NULL];
     [self performSegueWithIdentifier:@"OrganizerSignedIn" sender:self];
     _editEventButton.hidden = false;
-
+    _logIn.hidden = true;
+    _logOut.hidden = false;
+    _eventOrganizerLabel.hidden = true;
 }
 
 // Sent to the delegate when the log in attempt fails.
@@ -105,11 +118,17 @@
 // Sent to the delegate when the log in screen is dismissed.
 - (void)logInViewControllerDidCancelLogIn:(PFLogInViewController *)logInController {
     [self.navigationController popViewControllerAnimated:YES];
-    if ([PFUser currentUser]){
-        _editEventButton.hidden = false;
+    if (![PFUser currentUser]){
+        _editEventButton.hidden = true;
+        _logIn.hidden = false;
+        _logOut.hidden = true;
+        _eventOrganizerLabel.hidden = false;
     }
     else {
-        _editEventButton.hidden = true;
+        _editEventButton.hidden = false;
+        _logIn.hidden = true;
+        _logOut.hidden = false;
+        _eventOrganizerLabel.hidden = true;
     }
 }
 
