@@ -32,6 +32,7 @@
     
     // Set the background image of the banner as transparent (very tiny image file size)
     _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
+    _bannerText.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,6 +46,35 @@
     
 }
 
+- (void)closeKeyboard:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    //NSLog(@"Started editing target!");
+    _customBannerText = _bannerText.text;
+    NSLog(_customBannerText);
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    //NSLog(@"Started editing target!");
+    _customBannerText = _bannerText.text;
+    NSLog(_customBannerText);
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+
 - (void)addBanner:(id)sender
 {
     // Set the background image of the banner as transparent (very tiny image file size)
@@ -54,15 +84,26 @@
 
     UIGraphicsBeginImageContext(img1.size);
     [img1 drawAtPoint:CGPointMake(0, 0)];
-    
+
     // Drawing Rect
-    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGRect rectangle = CGRectMake(0, 500, 1000, 100);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(context, 1.0, 1.0, 1.0, 0.5);   //this is the transparent color
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
     CGContextFillRect(context, rectangle);
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
  
+    // Draw text
+    UIFont *textFont = [UIFont systemFontOfSize:50];
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    CGFloat fontHeight = textFont.pointSize;
+    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
+    
+    [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
+    
     // composite the rectangle onto the existing banner
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
@@ -80,12 +121,23 @@
     [img1 drawAtPoint:CGPointMake(0, 0)];
     
     // Drawing Rect
-    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGRect rectangle = CGRectMake(0, 500, 1000, 100);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(context, 1.0, 0.0, 0.0, 0.5);   //this is the transparent color
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
     CGContextFillRect(context, rectangle);
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
+    
+    // Draw text
+    UIFont *textFont = [UIFont systemFontOfSize:50];
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    CGFloat fontHeight = textFont.pointSize;
+    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
+    
+    [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
     
     // composite the rectangle onto the existing banner
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
@@ -104,12 +156,23 @@
     [img1 drawAtPoint:CGPointMake(0, 0)];
     
     // Drawing Rect
-    CGRect rectangle = CGRectMake(0, 500, 1500, 100);
+    CGRect rectangle = CGRectMake(0, 500, 1000, 100);
     CGContextRef context = UIGraphicsGetCurrentContext();
     CGContextSetRGBFillColor(context, 0.0, 0.0, 1.0, 0.5);   //this is the transparent color
     CGContextSetRGBStrokeColor(context, 0.0, 0.0, 0.0, 0.5);
     CGContextFillRect(context, rectangle);
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
+    
+    // Draw text
+    UIFont *textFont = [UIFont systemFontOfSize:50];
+    NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
+    paragraphStyle.alignment = NSTextAlignmentCenter;
+    
+    CGFloat fontHeight = textFont.pointSize;
+    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
+    
+    [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
     
     // composite the rectangle onto the existing banner
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();

@@ -24,6 +24,10 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
 	// Do any additional setup after loading the view, typically from a nib.
     
+    // load imagepicker
+    _imagePicker = [[UIImagePickerController alloc] init];
+    _imagePicker.delegate = self;
+    
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.
     _sidebarButton.title = @"ShareButton";
     _sidebarButton.target = self.revealViewController;
@@ -42,11 +46,8 @@
      [_bannerImages setCollectionViewLayout:layout];
      */
     _bannerImages.delegate = self;
-    // Load banner images
-    /*
-     _banners = [NSArray arrayWithObjects: @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", @"thumbnail", nil];
-    */
     
+    // Load banner images
     // each event banner element
     NSArray *eventPointers = self.eventObject[@"event_banners"];
     eventBanners = [NSMutableArray array];
@@ -65,11 +66,6 @@
         }
         _banners = eventBanners;
     }
-    
-    // HARDCODED KITTY PICTURE PLACEHOLDER
-    //_banners = [[NSMutableArray alloc] init];
-    //[_banners addObject:[UIImage imageNamed:@"thumbnail"]];
-    //NSLog(@"Number of banners: %d", [_banners count]);
     
     /*
      _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
@@ -126,16 +122,16 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
     {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType =
+        //UIImagePickerController *imagePicker =
+        //[[UIImagePickerController alloc] init];
+        //_imagePicker.delegate = self;
+        _imagePicker.sourceType =
         UIImagePickerControllerSourceTypeCamera;
-        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        _imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
         
         // allow basic user editing
-        imagePicker.allowsEditing = YES;
-        [self presentViewController:imagePicker
+        _imagePicker.allowsEditing = YES;
+        [self presentViewController:_imagePicker
                            animated:YES completion:nil];
         _newMedia = YES;
     }
@@ -147,14 +143,14 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeSavedPhotosAlbum])
     {
-        UIImagePickerController *imagePicker =
-        [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        imagePicker.sourceType =
+        //UIImagePickerController *imagePicker =
+        //[[UIImagePickerController alloc] init];
+        //imagePicker.delegate = self;
+        _imagePicker.sourceType =
         UIImagePickerControllerSourceTypePhotoLibrary;
-        imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
-        imagePicker.allowsEditing = NO;
-        [self presentViewController:imagePicker
+        _imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
+        _imagePicker.allowsEditing = NO;
+        [self presentViewController:_imagePicker
                            animated:YES completion:nil];
         _newMedia = NO;
     }
@@ -163,41 +159,56 @@
 // add banner to photo
 - (IBAction)addBanner:(id)sender
 {
-    // TODO: limit to only adding one banner
-    NSLog(@"adding banner");
+    
+    if(!_hasBanner) {
+        _baseImage = _imageView.image;
+        _hasBanner = YES;
+    }
     
     // Get reference to the picture taken
-    UIImage *img1 = _imageView.image;
+    UIImage *img1 = _baseImage;
+        
     // Get reference to banner image to add
-    // TODO: generalize to banners pulled from...Parse?
-    //UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
     //if(_bannerToAdd != NULL) {
     UIImage *banner = _bannerToAdd;
     //}
     
     _imageView.image = banner;
-    
-    // TODO: fix scaling hack
-    // Scale banner to screen width
-    /*
-    UIImage *scaledImage =
-    [UIImage imageWithCGImage:[banner CGImage]
-                        scale:(banner.scale * 1/8.0)
-                  orientation:(banner.imageOrientation)];
-     */
-    UIImage *scaledImage =
-    [UIImage imageWithCGImage:[banner CGImage]
-                        scale:(banner.scale)
-                  orientation:(banner.imageOrientation)];
-    
-    UIGraphicsBeginImageContext(img1.size);
-    [img1 drawAtPoint:CGPointMake(0, 0)];
-    
-    // y coordinate found through trial and error...
-    [scaledImage drawAtPoint:CGPointMake(0, 400)];
-    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    _imageView.image = resultingImage;
+        
+    // Image taken from front facing camera
+    if(img1.size.width < 1000.0f) {
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale)
+                      orientation:(banner.imageOrientation)];
+            
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+            
+        // y coordinate found through trial and error...
+        [scaledImage drawAtPoint:CGPointMake(0, 400)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
+    }
+    // Image taken from back facing camera
+    else {
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale * 1.0/2.5)
+                      orientation:(banner.imageOrientation)];
+            
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+            
+        // y coordinate found through trial and error...
+        [scaledImage drawAtPoint:CGPointMake(0, 1200)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
+    }
 }
 
 #pragma mark -
