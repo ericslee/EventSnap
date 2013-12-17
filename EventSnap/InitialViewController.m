@@ -9,6 +9,7 @@
 #import "InitialViewController.h"
 #import "EventOrganizersViewController.h"
 #import "EventsListViewController.h"
+#import "LogOutViewController.h"
 
 @interface InitialViewController ()
 
@@ -25,7 +26,18 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        if (![PFUser currentUser]){
+            _editEventButton.hidden = true;
+            _logIn.hidden = false;
+            _logOut.hidden = true;
+            _eventOrganizerLabel.hidden = false;
+        }
+        else {
+            _editEventButton.hidden = false;
+            _logIn.hidden = true;
+            _logOut.hidden = false;
+            _eventOrganizerLabel.hidden = true;
+        }
     }
     return self;
 }
@@ -54,6 +66,22 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
 }
 
+- (void)viewDidAppear:(BOOL)animated{
+    if (![PFUser currentUser]){
+        _editEventButton.hidden = true;
+        _logIn.hidden = false;
+        _logOut.hidden = true;
+        _eventOrganizerLabel.hidden = false;
+    }
+    else {
+        _editEventButton.hidden = false;
+        _logIn.hidden = true;
+        _logOut.hidden = false;
+        _eventOrganizerLabel.hidden = true;
+    }
+
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -71,13 +99,7 @@
 }
 
 - (IBAction)logOutView:(id)sender {
-    if([PFUser currentUser]) {
-        [PFUser logOut];
-    }
-    _editEventButton.hidden = false;
-    _logIn.hidden = true;
-    _logOut.hidden = false;
-    _eventOrganizerLabel.hidden = true;
+    [self performSegueWithIdentifier:@"LogOutView" sender:self];
     
 }
 

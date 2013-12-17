@@ -426,7 +426,7 @@
                         <outlet property="editEventButton" destination="Zkq-Gq-hV4" id="5Qm-k0-1lg"/>
                         <outlet property="eventOrganizerLabel" destination="hJT-hE-8JM" id="Htr-eT-DqC"/>
                         <outlet property="logIn" destination="exa-PK-a6q" id="3lQ-ED-wMW"/>
-                        <outlet property="logOut" destination="VfM-uG-C9R" id="1Kp-5Y-Zrf"/>
+                        <outlet property="logOut" destination="VfM-uG-C9R" id="FoY-cp-WWn"/>
                         <segue destination="r1r-GL-m6q" kind="push" identifier="EventsList" id="jfc-qp-rmf"/>
                         <segue destination="adZ-9l-YiS" kind="push" identifier="OrganizerSignedIn" id="2hK-Nd-jHu"/>
                     </connections>
