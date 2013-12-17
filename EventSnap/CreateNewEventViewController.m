@@ -186,7 +186,7 @@
      CGRect viewFrame = self.view.frame;
  
      if (eventNameField == textField) {
- //_previousButton.isEnabled = false;
+     
      }
      if(endDateField == textField){
          viewFrame.origin.y -= 80;
