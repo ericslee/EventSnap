@@ -20,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *bannerText;
 @property (strong, nonatomic) UIImage *bannerComposite;
 @property (strong, nonatomic) NSString *customBannerText;
-//@property (strong, nonatomic)
+@property (strong, nonatomic) UIColor *bannerColor;
 
 - (IBAction)saveBanner:(id)sender;
 - (IBAction)clearBanner:(id)sender;
@@ -30,4 +30,6 @@
 
 - (IBAction)setSentence:(id)sender;
 - (IBAction)closeKeyboard:(id)sender;
+
+- (IBAction)pickColor:(id)sender;
 @end

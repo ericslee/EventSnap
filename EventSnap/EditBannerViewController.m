@@ -33,6 +33,9 @@
     // Set the background image of the banner as transparent (very tiny image file size)
     _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
     _bannerText.delegate = self;
+    
+    // Initialize banner to white
+    _bannerColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -93,6 +96,11 @@
     return YES;
 }
 
+- (void)pickColor:(id)sender
+{
+    
+}
+
 - (void)addBanner:(id)sender
 {
     // Set the background image of the banner as transparent (very tiny image file size)
@@ -112,12 +120,13 @@
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
  
     // Draw text
-    UIFont *textFont = [UIFont systemFontOfSize:50];
+    UIFont *textFont = [UIFont fontWithName:@"Noteworthy-Bold" size:50];
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
     CGFloat fontHeight = textFont.pointSize;
-    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    //CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGFloat yOffset = (rectangle.size.height - (fontHeight * 2.0)) / 2.0;
     CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
     
     [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
@@ -147,12 +156,12 @@
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
     
     // Draw text
-    UIFont *textFont = [UIFont systemFontOfSize:50];
+    UIFont *textFont = [UIFont fontWithName:@"Noteworthy-Bold" size:50];
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
     CGFloat fontHeight = textFont.pointSize;
-    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGFloat yOffset = (rectangle.size.height - (fontHeight * 2.0)) / 2.0;
     CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
     
     [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
@@ -182,12 +191,12 @@
     //CGContextStrokeRect(context, rectangle);    //this will draw the border
     
     // Draw text
-    UIFont *textFont = [UIFont systemFontOfSize:50];
+    UIFont *textFont = [UIFont fontWithName:@"Noteworthy-Bold" size:50];
     NSMutableParagraphStyle *paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     paragraphStyle.alignment = NSTextAlignmentCenter;
     
     CGFloat fontHeight = textFont.pointSize;
-    CGFloat yOffset = (rectangle.size.height - fontHeight) / 2.0;
+    CGFloat yOffset = (rectangle.size.height - (fontHeight * 2.0)) / 2.0;
     CGRect textRect = CGRectMake(rectangle.origin.x, rectangle.origin.y + yOffset, rectangle.size.width, fontHeight*2);
     
     [_customBannerText drawInRect: textRect withAttributes:@{NSFontAttributeName:textFont, NSParagraphStyleAttributeName:paragraphStyle}];
