@@ -193,6 +193,7 @@
     [img1 drawAtPoint:CGPointMake(0, 0)];
     
     // y coordinate found through trial and error...
+    //[scaledImage drawAtPoint:CGPointMake(0, 400)];
     [scaledImage drawAtPoint:CGPointMake(0, 400)];
     UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();

@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kBz-rA-7ci">
-                                <rect key="frame" x="-3" y="57" width="326" height="361"/>
+                                <rect key="frame" x="25" y="57" width="270" height="361"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JRU-8D-0ad">
@@ -702,6 +702,15 @@
                                     <action selector="changeToBlueBanner:" destination="2Nd-yY-BXp" eventType="touchUpInside" id="mBx-FO-IYW"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Enter your text for the banner here" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="S9V-qC-H7X">
+                                <rect key="frame" x="-3" y="29" width="326" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2Nd-yY-BXp" id="KPm-3p-v5S"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -709,6 +718,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="bannerText" destination="S9V-qC-H7X" id="hj4-s5-PLc"/>
                         <outlet property="imageView" destination="gUk-LC-RvG" id="dCn-hh-0LW"/>
                     </connections>
                 </viewController>
