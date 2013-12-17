@@ -53,7 +53,8 @@
 
 - (void)clearBanner:(id)sender
 {
-    
+    _bannerComposite = [UIImage imageNamed:@"largeTransparent"];
+    _imageView.image = _bannerComposite;
 }
 
 - (void)closeKeyboard:(id)sender
