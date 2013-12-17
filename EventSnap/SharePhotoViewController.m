@@ -56,15 +56,17 @@
 - (IBAction)postPhoto:(id)sender {
     NSArray *activityItems;
     
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    _postImage = appDelegate.userGlobalImage;
+    
     activityItems = @[_postText.text];
     
-    /*
-    if (_postImage.image != nil) {
-        activityItems = @[_postText.text, _postImage.image];
+    if (_postImage != nil) {
+        activityItems = @[_postText.text, _postImage];
     } else {
         activityItems = @[_postText.text];
     }
-     */
+     
     
     UIActivityViewController *activityController =
     [[UIActivityViewController alloc]

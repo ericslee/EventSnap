@@ -17,6 +17,7 @@
 }
 @property (strong, nonatomic) IBOutlet UITextField *postText;
 @property (strong, nonatomic) PFObject *eventObject;
+@property (strong, nonatomic) UIImage *postImage;
 - (IBAction)postPhoto:(id)sender;
 
 @end

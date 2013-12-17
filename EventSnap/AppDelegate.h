@@ -13,5 +13,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) PFObject *currentEventObject;
+@property (strong, nonatomic) UIImage *userGlobalImage;
 
 @end

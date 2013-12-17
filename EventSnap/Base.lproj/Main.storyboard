@@ -166,7 +166,7 @@
         <!--Share Photo View Controller-->
         <scene sceneID="FEq-bG-hEo">
             <objects>
-                <viewController id="r04-u8-wkI" customClass="SharePhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SocialMediaView" id="r04-u8-wkI" customClass="SharePhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="R2B-hJ-21z"/>
                         <viewControllerLayoutGuide type="bottom" id="Cnw-FG-8OT"/>
@@ -629,6 +629,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="oiu-V5-Q6d" id="lI4-Gy-f9k"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Start Time" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fud-a1-I1v">
                                 <rect key="frame" x="20" y="153" width="280" height="30"/>

@@ -75,6 +75,8 @@
     
     // Change button color
     //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
+    _hasBanner = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -167,6 +169,15 @@
     
     // Get reference to the picture taken
     UIImage *img1 = _baseImage;
+    
+    NSLog(@"%f", img1.size.width);
+
+    // width x height
+    // 960 x 1280 front
+    // 1280 x 960 landscape front
+    // 2448 x 3264 back
+    // 3264 x 2448 landscape back
+    // * 3.2
         
     // Get reference to banner image to add
     //if(_bannerToAdd != NULL) {
@@ -187,11 +198,31 @@
         [img1 drawAtPoint:CGPointMake(0, 0)];
             
         // y coordinate found through trial and error...
-        [scaledImage drawAtPoint:CGPointMake(0, 400)];
+        //[scaledImage drawAtPoint:CGPointMake(0, 400)];
+        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 3.0)];
         UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         _imageView.image = resultingImage;
     }
+    /*
+    else if(img1.size.width < 1500.0f) {
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale * 1.0)
+                      orientation:(banner.imageOrientation)];
+        
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+        
+        // y coordinate found through trial and error...
+        //[scaledImage drawAtPoint:CGPointMake(0, 400)];
+        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 2.5)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
+    }
+     */
     // Image taken from back facing camera
     else {
         // Scale banner to screen width
@@ -204,11 +235,20 @@
         [img1 drawAtPoint:CGPointMake(0, 0)];
             
         // y coordinate found through trial and error...
-        [scaledImage drawAtPoint:CGPointMake(0, 1200)];
+        //[scaledImage drawAtPoint:CGPointMake(0, 1200)];
+        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 3.0)];
         UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         _imageView.image = resultingImage;
     }
+    
+    /*
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    SharePhotoViewController *sharePhotoController = [storyboard instantiateViewControllerWithIdentifier:@"SocialMediaView"];
+    sharePhotoController.postImage = _imageView.image;
+     */
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    appDelegate.userGlobalImage = _imageView.image;
 }
 
 #pragma mark -

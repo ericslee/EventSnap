@@ -10,6 +10,7 @@
 #import <MobileCoreServices/MobileCoreServices.h>
 #import <Parse/Parse.h>
 #import "MBProgressHUD.h"
+#import "SharePhotoViewController.h"
 
 @interface SecondViewController : UIViewController <UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource,
 UINavigationControllerDelegate> {
