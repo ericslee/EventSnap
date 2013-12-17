@@ -383,7 +383,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="logOutView:" destination="LQQ-co-N7m" eventType="touchUpInside" id="FHS-5w-fhC"/>
+                                    <action selector="logOutView:" destination="LQQ-co-N7m" eventType="touchUpInside" id="H9E-0V-lZS"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Organizer?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-hE-8JM">
@@ -426,9 +426,10 @@
                         <outlet property="editEventButton" destination="Zkq-Gq-hV4" id="5Qm-k0-1lg"/>
                         <outlet property="eventOrganizerLabel" destination="hJT-hE-8JM" id="Htr-eT-DqC"/>
                         <outlet property="logIn" destination="exa-PK-a6q" id="3lQ-ED-wMW"/>
-                        <outlet property="logOut" destination="VfM-uG-C9R" id="FoY-cp-WWn"/>
+                        <outlet property="logOut" destination="VfM-uG-C9R" id="qMj-0o-nAl"/>
                         <segue destination="r1r-GL-m6q" kind="push" identifier="EventsList" id="jfc-qp-rmf"/>
                         <segue destination="adZ-9l-YiS" kind="push" identifier="OrganizerSignedIn" id="2hK-Nd-jHu"/>
+                        <segue destination="9KU-3M-gYc" kind="push" identifier="LogOutView" id="YZV-LY-Wj0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pQ-7y-2xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -769,6 +770,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R0c-I6-1WE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2472" y="85"/>
+        </scene>
+        <!--Log Out View Controller-->
+        <scene sceneID="b5h-YM-8aI">
+            <objects>
+                <viewController id="9KU-3M-gYc" customClass="LogOutViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kZ6-WL-KJu"/>
+                        <viewControllerLayoutGuide type="bottom" id="fUn-uH-Qox"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lii-gZ-ptO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="urP-Uf-Xso">
+                                <rect key="frame" x="99" y="276" width="122" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.72206656390000001" green="0.82817049050000002" blue="0.87081473210000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
+                                <state key="normal" title="Log Me Out">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logMeOut:" destination="9KU-3M-gYc" eventType="touchUpInside" id="Xu1-WC-rhZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xCN-9H-nJJ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ejl-y3-iLs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1079" y="-1079"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
