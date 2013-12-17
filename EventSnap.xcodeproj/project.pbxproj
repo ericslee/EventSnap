@@ -46,6 +46,7 @@
 		5750E9B4183C5AC000345D27 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B3183C5AC000345D27 /* StoreKit.framework */; };
 		5750E9B6183C5AC600345D27 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */; };
 		5759D7AD1858E24B009F4497 /* NavigationToAddPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */; };
+		57640D0A1860BCFA00319074 /* LogOutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57640D091860BCFA00319074 /* LogOutViewController.m */; };
 		57BC2CC3185695AA003D8B54 /* EventOrganizersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57285F2C184F881800CBBA43 /* EventOrganizersViewController.m */; };
 		57D1A13E184F8E6500F7AB8C /* CreateNewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */; };
 		57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D1A1431856433900F7AB8C /* EditSelectedEventViewController.m */; };
@@ -127,6 +128,8 @@
 		5750E9B5183C5AC600345D27 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		5759D7AB1858E24B009F4497 /* NavigationToAddPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationToAddPhoto.h; sourceTree = "<group>"; };
 		5759D7AC1858E24B009F4497 /* NavigationToAddPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationToAddPhoto.m; sourceTree = "<group>"; };
+		57640D081860BCFA00319074 /* LogOutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogOutViewController.h; sourceTree = "<group>"; };
+		57640D091860BCFA00319074 /* LogOutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogOutViewController.m; sourceTree = "<group>"; };
 		57D1A13C184F8E6500F7AB8C /* CreateNewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateNewEventViewController.h; sourceTree = "<group>"; };
 		57D1A13D184F8E6500F7AB8C /* CreateNewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateNewEventViewController.m; sourceTree = "<group>"; };
 		57D1A1421856433900F7AB8C /* EditSelectedEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditSelectedEventViewController.h; sourceTree = "<group>"; };
@@ -219,6 +222,8 @@
 			children = (
 				110110AA183098EC00364860 /* AppDelegate.h */,
 				110110AB183098EC00364860 /* AppDelegate.m */,
+				57640D081860BCFA00319074 /* LogOutViewController.h */,
+				57640D091860BCFA00319074 /* LogOutViewController.m */,
 				57E55F90185BFCD3006F686F /* MBProgressHUD.h */,
 				57E55F91185BFCD3006F686F /* MBProgressHUD.m */,
 				110110AD183098EC00364860 /* Main.storyboard */,
@@ -416,6 +421,7 @@
 				57D1A1441856433900F7AB8C /* EditSelectedEventViewController.m in Sources */,
 				11A0E8D418603CD0003D5302 /* ISColorWheel.m in Sources */,
 				57E55F95185CC7DF006F686F /* EditEventPhotos.m in Sources */,
+				57640D0A1860BCFA00319074 /* LogOutViewController.m in Sources */,
 				110110A8183098EC00364860 /* main.m in Sources */,
 				118B1E0418568B0500865676 /* PhotoStreamViewCell.m in Sources */,
 				11B82C1A1858C065008BFCE5 /* BannerCollectionViewCell.m in Sources */,

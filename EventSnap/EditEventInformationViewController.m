@@ -54,8 +54,12 @@
     endDateField.inputView = endDatePicker;
     
     eventNameField.text = self.eventObject[@"event_name"];
-    startDateField.text = [NSString stringWithFormat:@"%@", self.eventObject[@"event_start_date"]];
-    endDateField.text = [NSString stringWithFormat:@"%@", self.eventObject[@"event_end_date"]];
+    NSDateFormatter *timeFormatter = [[NSDateFormatter alloc] init];
+    [timeFormatter setDateStyle:NSDateFormatterLongStyle];
+    NSString *startTime = [timeFormatter stringFromDate:self.eventObject[@"event_start_date"] ];
+    NSString *endTime = [timeFormatter stringFromDate:self.eventObject[@"event_end_date"] ];
+    startDateField.text = startTime;
+    endDateField.text = endTime;
     locationField.text = self.eventObject[@"event_location"];
     hashTagsField.text = self.eventObject[@"event_hashtags"];
     
