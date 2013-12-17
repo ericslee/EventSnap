@@ -158,65 +158,55 @@
 // add banner to photo
 - (IBAction)addBanner:(id)sender
 {
-    if(!_hasBanner)
-    {
-        // Get reference to the picture taken
-        UIImage *img1 = _imageView.image;
-        // Get reference to banner image to add
-        // TODO: generalize to banners pulled from...Parse?
-        //UIImage *banner = [UIImage imageNamed:@"Test_Banner"];
-        //if(_bannerToAdd != NULL) {
-        UIImage *banner = _bannerToAdd;
-        //}
     
-        _imageView.image = banner;
+    if(!_hasBanner) {
+        _baseImage = _imageView.image;
+        _hasBanner = YES;
+    }
     
-        // SCALING IS DIFFERENT BASED ON FRONT OR BACK FACING CAMERA
-        NSLog(@"%f %f % f", img1.scale,
-              img1.size.width, img1.size.height);
+    // Get reference to the picture taken
+    UIImage *img1 = _baseImage;
         
-        // Image taken from front facing camera
-        if(img1.size.width < 1000.0f) {
-            // Scale banner to screen width
-            UIImage *scaledImage =
-            [UIImage imageWithCGImage:[banner CGImage]
-                                scale:(banner.scale)
-                          orientation:(banner.imageOrientation)];
-            
-            UIGraphicsBeginImageContext(img1.size);
-            [img1 drawAtPoint:CGPointMake(0, 0)];
-            
-            // y coordinate found through trial and error...
-            [scaledImage drawAtPoint:CGPointMake(0, 400)];
-            //[scaledImage drawAtPoint:CGPointMake(0, 1200)];
-            UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            _imageView.image = resultingImage;
-            
-            _hasBanner = YES;
-        }
-        // Image taken from back facing camera
-        else {
-            // Scale banner to screen width
-            UIImage *scaledImage =
-            [UIImage imageWithCGImage:[banner CGImage]
-                                scale:(banner.scale * 1.0/2.5)
-                          orientation:(banner.imageOrientation)];
-            
-            UIGraphicsBeginImageContext(img1.size);
-            [img1 drawAtPoint:CGPointMake(0, 0)];
-            
-            // y coordinate found through trial and error...
-            //[scaledImage drawAtPoint:CGPointMake(0, 400)];
-            [scaledImage drawAtPoint:CGPointMake(0, 1200)];
-            UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
-            UIGraphicsEndImageContext();
-            _imageView.image = resultingImage;
-            
-            _hasBanner = YES;
-        }
+    // Get reference to banner image to add
+    //if(_bannerToAdd != NULL) {
+    UIImage *banner = _bannerToAdd;
+    //}
+    
+    _imageView.image = banner;
         
-        
+    // Image taken from front facing camera
+    if(img1.size.width < 1000.0f) {
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale)
+                      orientation:(banner.imageOrientation)];
+            
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+            
+        // y coordinate found through trial and error...
+        [scaledImage drawAtPoint:CGPointMake(0, 400)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
+    }
+    // Image taken from back facing camera
+    else {
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale * 1.0/2.5)
+                      orientation:(banner.imageOrientation)];
+            
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+            
+        // y coordinate found through trial and error...
+        [scaledImage drawAtPoint:CGPointMake(0, 1200)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
     }
 }
 

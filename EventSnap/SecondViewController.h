@@ -28,7 +28,7 @@ UINavigationControllerDelegate> {
 @property (nonatomic) id delegate;
 @property (strong, nonatomic) UIImage *bannerToAdd;
 @property (strong, nonatomic) UIImagePickerController *imagePicker;
-
+@property (strong, nonatomic) UIImage *baseImage;
 
 - (IBAction)useCamera:(id)sender;
 - (IBAction)useCameraRoll:(id)sender;
