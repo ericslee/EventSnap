@@ -15,7 +15,7 @@
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
         _titleLabel = [[UILabel alloc]init];
-        _titleLabel.font = [UIFont fontWithName:@"Noteworthy" size:20.0];
+        _titleLabel.font = [UIFont fontWithName:@"Noteworthy" size:22.0];
         _dateLabel = [[UILabel alloc]init];
         _dateLabel.font = [UIFont fontWithName:@"Noteworthy" size:12.0];
         _imgView = [[UIImageView alloc]init];
@@ -34,7 +34,7 @@
     frame= CGRectMake(boundsX+10 ,0, 60, 60);
     _imgView.frame = frame;
     
-    frame= CGRectMake(boundsX+90 ,20, 200, 25);
+    frame= CGRectMake(boundsX+90 ,15, 200, 25);
     _titleLabel.frame = frame;
     
     frame= CGRectMake(boundsX+90 ,50, 200, 15);
