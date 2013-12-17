@@ -12,7 +12,9 @@
 #import <Parse/Parse.h>
 
 
-@interface SharePhotoViewController : UIViewController
+@interface SharePhotoViewController : UIViewController {
+    IBOutlet UIImageView *socialBalloon;
+}
 @property (strong, nonatomic) IBOutlet UITextField *postText;
 @property (strong, nonatomic) PFObject *eventObject;
 - (IBAction)postPhoto:(id)sender;

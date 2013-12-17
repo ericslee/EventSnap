@@ -21,6 +21,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
 	// Do any additional setup after loading the view, typically from a nib.
     
     // Set the side bar button action. When it's tapped, it'll show up the sidebar.

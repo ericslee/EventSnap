@@ -30,6 +30,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"wet_snow.png"]];
 	// Do any additional setup after loading the view.
     NSArray *eventPointers = self.eventObject[@"event_pictures"];
     eventPictures = [NSMutableArray array];
