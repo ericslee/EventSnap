@@ -55,14 +55,32 @@
 {
     //NSLog(@"Started editing target!");
     _customBannerText = _bannerText.text;
-    NSLog(_customBannerText);
+    //NSLog(_customBannerText);
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
     //NSLog(@"Started editing target!");
     _customBannerText = _bannerText.text;
-    NSLog(_customBannerText);
+    //NSLog(_customBannerText);
+}
+
+- (void)setSentence:(id)sender
+{
+    _customBannerText = _bannerText.text;
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+// It is important for you to hide kwyboard
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
