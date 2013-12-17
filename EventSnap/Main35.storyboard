@@ -362,46 +362,58 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQH-eB-F6r">
-                                <rect key="frame" x="167" y="442" width="112" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="exa-PK-a6q">
+                                <rect key="frame" x="164" y="444" width="107" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
-                                <state key="normal" title="Log In / Sign Up">
+                                <state key="normal" title="Login / Sign Up">
+                                    <color key="titleColor" red="0.36407563139999999" green="0.16424187100000001" blue="0.403121014" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="loginView:" destination="LQQ-co-N7m" eventType="touchUpInside" id="tHJ-PT-t1p"/>
+                                    <action selector="loginView:" destination="LQQ-co-N7m" eventType="touchUpInside" id="53G-vu-yt5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Organizer?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tGk-2A-6u2">
-                                <rect key="frame" x="41" y="446" width="132" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VfM-uG-C9R">
+                                <rect key="frame" x="241" y="444" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="15"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" red="0.36407563139999999" green="0.16424187100000001" blue="0.403121014" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutView:" destination="LQQ-co-N7m" eventType="touchUpInside" id="FHS-5w-fhC"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Organizer?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hJT-hE-8JM">
+                                <rect key="frame" x="31" y="448" width="132" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RON-a7-Os5">
-                                <rect key="frame" x="90" y="220" width="140" height="51"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O28-1E-c4Z">
+                                <rect key="frame" x="90" y="224" width="140" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="14"/>
-                                <state key="normal" title="Search Events">
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="18"/>
+                                <state key="normal" title="Find Events >">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="searchEvents:" destination="LQQ-co-N7m" eventType="touchUpInside" id="yrS-I6-UhY"/>
+                                    <action selector="searchEvents:" destination="LQQ-co-N7m" eventType="touchUpInside" id="K67-Jj-ajQ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DnR-Kz-3PU">
-                                <rect key="frame" x="86" y="331" width="148" height="55"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zkq-Gq-hV4">
+                                <rect key="frame" x="107" y="445" width="87" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="24"/>
+                                <fontDescription key="fontDescription" name="Noteworthy-Bold" family="Noteworthy" pointSize="15"/>
                                 <state key="normal" title="Edit Events">
-                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.36407563139999999" green="0.16424187100000001" blue="0.403121014" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="editEventLabel:" destination="LQQ-co-N7m" eventType="touchUpInside" id="Ub7-e5-rVz"/>
+                                    <action selector="editEventLabel:" destination="LQQ-co-N7m" eventType="touchUpInside" id="sSV-aK-1HA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -411,14 +423,17 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="editEventButton" destination="DnR-Kz-3PU" id="DuR-yc-cig"/>
+                        <outlet property="editEventButton" destination="Zkq-Gq-hV4" id="5Qm-k0-1lg"/>
+                        <outlet property="eventOrganizerLabel" destination="hJT-hE-8JM" id="Htr-eT-DqC"/>
+                        <outlet property="logIn" destination="exa-PK-a6q" id="3lQ-ED-wMW"/>
+                        <outlet property="logOut" destination="VfM-uG-C9R" id="1Kp-5Y-Zrf"/>
                         <segue destination="r1r-GL-m6q" kind="push" identifier="EventsList" id="jfc-qp-rmf"/>
                         <segue destination="adZ-9l-YiS" kind="push" identifier="OrganizerSignedIn" id="2hK-Nd-jHu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9pQ-7y-2xq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="785" y="-242"/>
+            <point key="canvasLocation" x="711" y="-232"/>
         </scene>
         <!--Event Organizers View Controller-->
         <scene sceneID="FQU-16-Irx">
