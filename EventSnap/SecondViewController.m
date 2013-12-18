@@ -38,13 +38,6 @@
     // Set the gesture
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
     
-    //_bannerImages = [[UICollectionView alloc] initWithFrame:self.view.bounds];
-    /*
-     UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-     [layout setItemSize:CGSizeMake(100, 100)];
-     [layout setScrollDirection:UICollectionViewScrollDirectionHorizontal];
-     [_bannerImages setCollectionViewLayout:layout];
-     */
     _bannerImages.delegate = self;
     
     // Load banner images
@@ -67,14 +60,6 @@
         _banners = eventBanners;
     }
     
-    /*
-     _bannerImages = [[BannerCollectionView alloc] initWithFrame:CGRectMake(320,200) collectionViewLayout:layout];*/
-    //_bannerImages.dataSource = self;
-    //NSLog(@"%d", [_bannerImages numberOfSections]);
-    //[_bannerImages reloadData];
-    
-    // Change button color
-    //_sidebarButton.tintColor = [UIColor colorWithWhite:0.96f alpha:0.2f];
     _hasBanner = NO;
     
 }
@@ -124,9 +109,6 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeCamera])
     {
-        //UIImagePickerController *imagePicker =
-        //[[UIImagePickerController alloc] init];
-        //_imagePicker.delegate = self;
         _imagePicker.sourceType =
         UIImagePickerControllerSourceTypeCamera;
         _imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
@@ -136,6 +118,7 @@
         [self presentViewController:_imagePicker
                            animated:YES completion:nil];
         _newMedia = YES;
+        _hasBanner = NO;
     }
 }
 
@@ -145,9 +128,6 @@
     if ([UIImagePickerController isSourceTypeAvailable:
          UIImagePickerControllerSourceTypeSavedPhotosAlbum])
     {
-        //UIImagePickerController *imagePicker =
-        //[[UIImagePickerController alloc] init];
-        //imagePicker.delegate = self;
         _imagePicker.sourceType =
         UIImagePickerControllerSourceTypePhotoLibrary;
         _imagePicker.mediaTypes = @[(NSString *) kUTTypeImage];
@@ -155,6 +135,7 @@
         [self presentViewController:_imagePicker
                            animated:YES completion:nil];
         _newMedia = NO;
+        _hasBanner = NO;
     }
 }
 
@@ -185,9 +166,13 @@
     //}
     
     _imageView.image = banner;
-        
-    // Image taken from front facing camera
+    CGPoint center = _imageView.center;
+    
+    // Portrait image taken from front facing camera
     if(img1.size.width < 1000.0f) {
+        
+        _imageView.frame = CGRectMake(0, 0, 270, 361);
+        _imageView.center = center;
         // Scale banner to screen width
         UIImage *scaledImage =
         [UIImage imageWithCGImage:[banner CGImage]
@@ -196,35 +181,37 @@
             
         UIGraphicsBeginImageContext(img1.size);
         [img1 drawAtPoint:CGPointMake(0, 0)];
-            
-        // y coordinate found through trial and error...
+
         //[scaledImage drawAtPoint:CGPointMake(0, 400)];
         [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 3.0)];
         UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         _imageView.image = resultingImage;
     }
-    /*
+    // landscape front facing camera
     else if(img1.size.width < 1500.0f) {
+        // Resize the UIImageView
+        _imageView.frame = CGRectMake(0, 0, 361, 270);
+        _imageView.center = center;
         // Scale banner to screen width
         UIImage *scaledImage =
         [UIImage imageWithCGImage:[banner CGImage]
-                            scale:(banner.scale * 1.0)
+                            scale:(banner.scale * 1.0/1.3)
                       orientation:(banner.imageOrientation)];
         
         UIGraphicsBeginImageContext(img1.size);
         [img1 drawAtPoint:CGPointMake(0, 0)];
         
-        // y coordinate found through trial and error...
         //[scaledImage drawAtPoint:CGPointMake(0, 400)];
-        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 2.5)];
+        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 12.0)];
         UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         _imageView.image = resultingImage;
     }
-     */
-    // Image taken from back facing camera
-    else {
+    // Portrait image taken from back facing camera
+    else if(img1.size.width < 2500.0f) {
+        _imageView.frame = CGRectMake(0, 0, 270, 361);
+        _imageView.center = center;
         // Scale banner to screen width
         UIImage *scaledImage =
         [UIImage imageWithCGImage:[banner CGImage]
@@ -233,20 +220,35 @@
             
         UIGraphicsBeginImageContext(img1.size);
         [img1 drawAtPoint:CGPointMake(0, 0)];
-            
-        // y coordinate found through trial and error...
+        
         //[scaledImage drawAtPoint:CGPointMake(0, 1200)];
         [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 3.0)];
         UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
         UIGraphicsEndImageContext();
         _imageView.image = resultingImage;
     }
+    // Landscape image taken from back facing camera
+    else {
+        // Resize the UIImageView
+        _imageView.frame = CGRectMake(0, 0, 361, 270);
+        _imageView.center = center;
+        // Scale banner to screen width
+        UIImage *scaledImage =
+        [UIImage imageWithCGImage:[banner CGImage]
+                            scale:(banner.scale * 1.0/3.2)
+                      orientation:(banner.imageOrientation)];
+        
+        UIGraphicsBeginImageContext(img1.size);
+        [img1 drawAtPoint:CGPointMake(0, 0)];
+        
+        //[scaledImage drawAtPoint:CGPointMake(0, 1200)];
+        [scaledImage drawAtPoint:CGPointMake(0, img1.size.height / 8.0)];
+        UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
+        UIGraphicsEndImageContext();
+        _imageView.image = resultingImage;
+    }
     
-    /*
-    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    SharePhotoViewController *sharePhotoController = [storyboard instantiateViewControllerWithIdentifier:@"SocialMediaView"];
-    sharePhotoController.postImage = _imageView.image;
-     */
+    
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     appDelegate.userGlobalImage = _imageView.image;
 }

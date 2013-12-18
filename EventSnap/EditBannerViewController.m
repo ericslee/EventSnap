@@ -172,30 +172,7 @@
 }
 
 - (void)saveBanner:(id)sender
-{
-    /*
-    // Set the background image of the banner as transparent (very tiny image file size)
-    UIImage *img1 = _bannerComposite;
-    
-    // Get reference to banner image to add
-    UIImage *banner = [UIImage imageNamed:@"eventSnapLogo"];
-    
-    // Scale banner to screen width
-    UIImage *scaledImage =
-    [UIImage imageWithCGImage:[banner CGImage]
-                        scale:(banner.scale * 1/9.0)
-                  orientation:(banner.imageOrientation)];
-    
-    UIGraphicsBeginImageContext(img1.size);
-    [img1 drawAtPoint:CGPointMake(0, 0)];
-    [scaledImage drawAtPoint:CGPointMake(0, 0)];
-    UIImage *resultingImage = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    _imageView.image = resultingImage;
-    */
-    // TESTING SENDING BANNERS TO PARSE USING MY KITTY
-    //_imageView.image = [UIImage imageNamed:@"thumbnail"];
-    
+{ 
     NSData *pictureData = UIImagePNGRepresentation(_imageView.image);
     //NSData *pictureData = UIImageJPEGRepresentation(_imageView.image, 0.5);
     
